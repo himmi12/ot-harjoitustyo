@@ -1,0 +1,88 @@
+commit 7c9249dbfdded2e1f2cef31d10c3ec35aa6b6770
+Author: Himmi <himmi.lindgren@helsinki.fi>
+Date:   Sun Mar 15 18:39:40 2020 +0200
+
+    kaikki
+
+ eka.txt              | 2 +-
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 4 files changed, 1 insertion(+), 1 deletion(-)
+
+commit a06b2d1a61f0c5c8017e29eda51681991519db92
+Author: Himmi <himmi.lindgren@helsinki.fi>
+Date:   Sun Mar 15 14:33:17 2020 +0200
+
+    molemmat
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 0fdd7e367105b8f30d5a6dee3de57d67a25e6505
+Author: Himmi <himmi.lindgren@helsinki.fi>
+Date:   Sun Mar 15 14:30:51 2020 +0200
+
+    poistetaan
+
+ toinen.txt | 2 --
+ 1 file changed, 2 deletions(-)
+
+commit 46b0b708a2781dc93a420b05cfcd06874f4e0085
+Author: Himmi <himmi.lindgren@helsinki.fi>
+Date:   Fri Mar 13 15:41:17 2020 +0200
+
+    uusi hakemisto
+
+ stuff/kokeilua.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit c88931d2fbd0141dbbb326f1a4cb6ac75ed9f830
+Author: Himmi <himmi.lindgren@helsinki.fi>
+Date:   Fri Mar 13 15:37:22 2020 +0200
+
+    muutokset
+
+ kolmas.txt | 1 +
+ toinen.txt | 2 ++
+ 2 files changed, 3 insertions(+)
+
+commit 42d0678bd5960cf1320d81db86e882f382a09649
+Author: Himmi <himmi.lindgren@helsinki.fi>
+Date:   Fri Mar 13 15:28:00 2020 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 7958ce8f6b2661752a19c3f6a72dff0dc7ce32c0
+Author: Himmi <himmi.lindgren@helsinki.fi>
+Date:   Fri Mar 13 15:25:04 2020 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)¨
+
+commit 50e10c7d769656e507fbf4dbf82ed9baf7eb7c7b
+Author: Himmi <himmi.lindgren@helsinki.fi>
+Date:   Sun Mar 15 19:31:03 2020 +0200
+
+    kaikki
+
+ file2.txt               | 0
+ file1.txt => file22.txt | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 3f452627087fb73216e87ec41d70ed77bccfd231
+Author: Himmi <himmi.lindgren@helsinki.fi>
+Date:   Sun Mar 15 19:26:49 2020 +0200
+
+    lisays
+
+ file1.txt | 0
+ file2.txt | 0
+ file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
