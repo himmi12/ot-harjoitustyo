@@ -23,4 +23,4 @@
 
 **Työaikakirjanpito**
 
-[harjoitustyöhön käyetty aika](ot-harjoitustyo/tyoaikakirjanpito)
+[harjoitustyöhön käytetty aika](ot-harjoitustyo/tyoaikakirjanpito)
