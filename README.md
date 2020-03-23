@@ -11,3 +11,14 @@
 
 [Screenshot(21).png](https://github.com/himmi12/ot-harjoitustyo/blob/master/laskarit/viikko2/Unicafe/Screenshot%20(21).png)
 
+
+**Harjoitustyö**
+
+*viikko 2*
+
+[alustava määrittelydokumentti](ot-harjoitustyo/harjoitustyo/dokumentointi)
+
+
+**Työaikakirjanpito**
+
+[harjoitustyöhön käyetty aika](ot-harjoitustyo/tyoaikakirjanpito)
