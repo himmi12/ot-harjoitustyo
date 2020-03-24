@@ -1,0 +1,19 @@
+# Sovelluksen tarkoitus
+
+Toteutetaan yksinkertaistettu genomiselain, jonka avulla voi etsiä, mistä lajista tuntematon DNA-sekvenssi on peräisin.
+Sovellusta voi käyttää kirjautuneena tai kirjautumatta. Tiedonhaku on mahdollista kirjautumatta sovellukseen. Lajien genomien lataaminen
+tietokantaan edellyttää tunnuksen tekemistä ja sisään kirjautumista. Tällöin voi myös nimetä pätkiä genomeista tietyiksi geeneiksi.
+Koska useiden lajien genomien koko on miljardien emäksien suuruusluokassa, tässä työssä ei ladata tietokantaan oikeita genomeita.
+
+# Käyttäjät
+
+* *Peruskäyttäjä:* Voi hakea tietokannasta tietoa vertaamalla omaa DNA-sekvenssiään tietokannan sekvensseihin siten, että käyttäjälle
+palautetaan laji, josta kyseinen sekvenssi on peräisin. On mahdollista, että sovellusta kehitetään siten, että käyttäjälle palautetaan
+lajit, jotka parhaiten vastaavat käyttäjän DNA-sekvenssiä. Tällöin käyttäjän sekvenssin ei tarvitse täysin sisältyä palautettaviin
+sekvensseihin.
+ * *Erikoiskäyttäjä*: Peruskäyttäjän toiminnallisuudet sisältyvät. Lisäksi erikoiskäyttäjän on mahdollista ladata ja nimetä DNA-sekevnssejä
+tietokantaan. On myös mahdollista, että sovellusta kehitetään siten, että erikoiskäyttäjä voi muokata olemassa olevia sekvenssejä.
+
+# Suunniteltu toiminnallisuus
+
+*
