@@ -17,10 +17,10 @@
 
 *viikko 2*
 
-[alustava määrittelydokumentti](https://github.com/himmi12/ot-harjoitustyo/blob/master/harjoitustyo/dokumentointi)
+[alustava määrittelydokumentti](/harjoitustyo/dokumentointi)
 
 
 
 **Työaikakirjanpito**
 
-[harjoitustyöhön käytetty aika](https://github.com/himmi12/ot-harjoitustyo/blob/master/tyoaikakirjanpito)
+[harjoitustyöhön käytetty aika](/tyoaikakirjanpito)
