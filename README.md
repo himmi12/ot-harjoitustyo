@@ -9,7 +9,7 @@
 
 *viikko 2*
 
-[Screenshot(21).png](https://github.com/himmi12/ot-harjoitustyo/blob/master/laskarit/viikko2/Unicafe/Screenshot%20(21).png)
+[Screenshot(21).png](/laskarit/viikko2/Unicafe/Screenshot%20(21).png)
 
 
 
