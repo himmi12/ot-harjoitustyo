@@ -14,6 +14,11 @@
 
 *viikko 3*
 
+[tehtävät 1 ja 2](/laskarit/viikko3/IMG_1892.jpg)
+
+[tehtävä 3](/laskarit/viikko3/IMG_1893.jpg)
+
+[tehtävä 4](/laskarit/viikko3/IMG_1894.jpg)
 
 **Harjoitustyö**
 
