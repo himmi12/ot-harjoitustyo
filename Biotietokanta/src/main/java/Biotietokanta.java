@@ -23,8 +23,8 @@ public class Biotietokanta {
 
             if (komento.equals("1")) {
                 lisaa();
-            } else if (komento.equals("2")) {
-                haeLajinNimea();
+//            } else if (komento.equals("2")) {
+//                haeLajinNimea();
             }
         }    
     }
@@ -42,7 +42,7 @@ public class Biotietokanta {
             System.out.println("Laji lisattiin");
         }
     }
-    public void haeLajinNimea() throws SQLException {
-        
-    }
+//    public void haeLajinNimea() throws SQLException {
+//        
+//    }
 }

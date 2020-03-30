@@ -48,18 +48,18 @@ public class Tietokanta {
             }
         }
     }
-    public String haeLajinNimea(String sekvenssi) throws SQLException {
-        try (Connection yhteys=luoYhteysJaVarmistaTietokanta()) {
-            PreparedStatement p=yhteys.prepareStatement("SELECT laji FROM Sekvenssit WHERE data=?");
-            p.setString(1, sekvenssi);
-            
-            ResultSet r = p.executeQuery();
-            if (r.next()) {
-                return r.getString(1);
-            } else {
-                return "Syötetty DNA-sekvenssi ei vastannut mitään tietokannassa olevaa lajia";
-            }
-        }
-    }
+//    public String haeLajinNimea(String sekvenssi) throws SQLException {
+//        try (Connection yhteys=luoYhteysJaVarmistaTietokanta()) {
+//            PreparedStatement p=yhteys.prepareStatement("SELECT laji FROM Sekvenssit WHERE data=?");
+//            p.setString(1, sekvenssi);
+//            
+//            ResultSet r = p.executeQuery();
+//            if (r.next()) {
+//                return r.getString(1);
+//            } else {
+//                return "Syötetty DNA-sekvenssi ei vastannut mitään tietokannassa olevaa lajia";
+//            }
+//        }
+//    }
     
 }

@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        String tietokannanPolku = "jdbc:sqlite:com.mycompany.biotietokanta.db"; //tässä ehkä jotain vikaa
+        String tietokannanPolku = "jdbc:sqlite:com.mycompany.biotietokanta"; 
         if (args.length > 0) {
             tietokannanPolku = args[0];
         }
