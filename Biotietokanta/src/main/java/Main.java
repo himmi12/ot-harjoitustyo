@@ -1,20 +1,10 @@
 
 import java.util.Scanner;
+import java.sql.SQLException;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author himmi
- */
 public class Main {
-    
-    public static void main(String[] args) {
-        String tietokannanPolku = "";
+    public static void main(String[] args) throws SQLException {
+        String tietokannanPolku = "jdbc:sqlite:com.mycompany.biotietokanta.db"; //tässä ehkä jotain vikaa
         if (args.length > 0) {
             tietokannanPolku = args[0];
         }

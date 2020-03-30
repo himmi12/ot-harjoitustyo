@@ -9,5 +9,23 @@
  * @author himmi
  */
 public class Laji {
+    private String sekvenssi;
+    private String nimi;
     
+    public Laji(String sekvenssi, String nimi) {
+        this.sekvenssi=sekvenssi;
+        this.nimi=nimi;
+    }
+    public String getNimi() {
+        return this.nimi;
+    }
+    public String getData() {
+        return this.sekvenssi;
+    }
+    public void setNimi(String nimi) {
+        this.nimi=nimi;
+    }
+    public void setData(String sekvenssi) {
+        this.sekvenssi=sekvenssi;
+    }
 }
