@@ -11,4 +11,6 @@ VIIKKO3
 29.03.2020 1h
 Tein ohjelmaan alustavia rakenteita ja varmistin, että repositorioni juuresta löytyy Maven-projekti.
 
-30.03.2020
+30.03.2020 5,5h
+Yritin rakentaa tietokantaa, johon voi lisätä sekvenssejä ja toteuttaa hakutoiminnallisuutta. En päässyt eteenpäin siitä, että sql:n 
+Driver Manageria ei löytynyt. En myöskään osannut etsiä tietokannan polkua ohjelman ja tietokannan välistä yhteyttä varten.
