@@ -10,20 +10,20 @@
  */
 public class Laji {
     private String sekvenssi;
-    private String nimi;
+    private String lajinNimi;
     
     public Laji(String sekvenssi, String nimi) {
         this.sekvenssi=sekvenssi;
-        this.nimi=nimi;
+        this.lajinNimi=nimi;
     }
-    public String getNimi() {
-        return this.nimi;
+    public String getLaji() {
+        return this.lajinNimi;
     }
     public String getData() {
         return this.sekvenssi;
     }
-    public void setNimi(String nimi) {
-        this.nimi=nimi;
+    public void setLaji(String nimi) {
+        this.lajinNimi=nimi;
     }
     public void setData(String sekvenssi) {
         this.sekvenssi=sekvenssi;
