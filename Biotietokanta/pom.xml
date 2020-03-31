@@ -6,11 +6,11 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <dependencies>
-        <dependency>
+<!--        <dependency>
             <groupId>com.oracle</groupId>
             <artifactId>jdbc3</artifactId>
             <version>30.1</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
