@@ -14,3 +14,13 @@ Tein ohjelmaan alustavia rakenteita ja varmistin, että repositorioni juuresta l
 30.03.2020 5,5h
 Yritin rakentaa tietokantaa, johon voi lisätä sekvenssejä ja toteuttaa hakutoiminnallisuutta. En päässyt eteenpäin siitä, että sql:n 
 Driver Manageria ei löytynyt. En myöskään osannut etsiä tietokannan polkua ohjelman ja tietokannan välistä yhteyttä varten.
+
+30.03.2020 1h
+Sain DriverManagerin toimimaan lisäämällä jbcd-ajurin Dependencies-kohtaan pom.xml-tiedostoon.
+
+31.03.2020 6h
+Minulla oli edelleen erittäin paljon ongelmia Sekvenssit-tietokannan kanssa. Lopulta päätin toteuttaa toiminnallisuutta ohjelmaan luomalla
+käyttäjille tietokannan sijaan listan ja siten pystyin toteuttamaan tunnuksen luomisen ja sisäänkirjautumisen. En tehnyt vielä tällä 
+viikolla tietokantaa vaativaa haku-toiminnallisuutta ohjelmaan. 
+
+Sain luomani testit toimimaan.
