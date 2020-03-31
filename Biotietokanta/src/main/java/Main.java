@@ -12,7 +12,7 @@ public class Main {
         
 //        tietokanta.poistaSekvenssit();
  
-        Biotietokanta biotietokanta=new Biotietokanta(lukija, tietokanta);
+        Biotietokanta biotietokanta=new Biotietokanta();
         biotietokanta.luoTunnus("tutkija123", "salasana");        
         biotietokanta.luoTunnus("biologi", "lehtokurppa2020");
         biotietokanta.luoTunnus("tutkija123", "Provinssi2005");
