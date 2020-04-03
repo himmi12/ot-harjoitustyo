@@ -7,8 +7,6 @@ import java.util.List;
 
 public class Biotietokanta {
     
-//    private Scanner lukija;
-//    private Tietokanta tietokanta;
     private List<Kayttaja>kayttajat;
     
     public Biotietokanta() {
