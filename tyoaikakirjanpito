@@ -24,3 +24,10 @@ käyttäjille tietokannan sijaan listan ja siten pystyin toteuttamaan tunnuksen 
 viikolla tietokantaa vaativaa haku-toiminnallisuutta ohjelmaan. 
 
 Sain luomani testit toimimaan.
+
+VIIKKO4
+
+04.03. 4h
+Tein ohjelmalle graafisen käyttöliittymän, jonka avulla voi kirjautua sisään ja luoda tunnuksen. Tein näihin toimintoihin tarvittavat 
+näkymät. Tähän liittyen aion muuttaa toimintaa vielä siten, että graafiseen käyttöliittymään tulostuu sopiva virheviesti, jos ei syötä
+oikeanlaisia arvoja.
