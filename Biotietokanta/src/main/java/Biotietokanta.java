@@ -14,7 +14,7 @@ public class Biotietokanta {
         this.kayttajat=new ArrayList<>();
     }
     public boolean luoTunnus(String tunnus, String salasana) {
-        
+
         if (salasana.length()<6) {
             System.out.println("Salasana on liian lyhyt. Keksi toinen salasana.");
             return false;
@@ -37,7 +37,7 @@ public class Biotietokanta {
             }
             if (onnistuuko==1) {
                 Kayttaja uusiKayttaja = new Kayttaja(tunnus, salasana);
-                System.out.println("Käyttäjätunnus on luotu. Kirjaudu sisään.");
+                System.out.println("Käyttäjätunnus on luotu.");
                 this.kayttajat.add(uusiKayttaja);
                 return true;
             }

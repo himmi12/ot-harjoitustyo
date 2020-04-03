@@ -22,6 +22,9 @@ import javafx.scene.layout.VBox;
  */
 public class BiotietokantaSovellus extends Application {
     
+    private String un;
+    private String pw;
+    
     @Override
     public void start(Stage window) throws Exception {
         Biotietokanta bioDb = new Biotietokanta();
@@ -97,10 +100,20 @@ public class BiotietokantaSovellus extends Application {
             window.setScene(account);
         });
         toPrivateView.setOnAction((event)-> {
-            window.setScene(priv);
+            this.un=u.getText();
+            this.pw=p.getText();            
+            boolean reply=bioDb.kirjauduSisaan(this.un, this.pw);
+            if (reply==true) {
+                window.setScene(priv);
+            }
         });
         create.setOnAction((event) -> {
-            window.setScene(priv);
+            this.un=username.getText();
+            this.pw=password.getText();            
+            boolean reply=bioDb.luoTunnus(this.un, this.pw);
+            if (reply==true) {
+                window.setScene(priv);
+            }
         });
         toSigningIn.setOnAction((event) -> {
             window.setScene(account);
