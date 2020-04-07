@@ -57,7 +57,7 @@
                 
                 <configuration>
                     <excludes>
-                        <exclude>BiotietokantaSovellus.java</exclude>
+                        <exclude>BiotietokantaSovellus.java/*</exclude>
                     </excludes>
                 </configuration>
                 
