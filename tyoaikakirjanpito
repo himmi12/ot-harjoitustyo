@@ -27,7 +27,11 @@ Sain luomani testit toimimaan.
 
 VIIKKO4
 
-04.03. 4h
+03.04. 4h
 Tein ohjelmalle graafisen käyttöliittymän, jonka avulla voi kirjautua sisään ja luoda tunnuksen. Tein näihin toimintoihin tarvittavat 
 näkymät. Tähän liittyen aion muuttaa toimintaa vielä siten, että graafiseen käyttöliittymään tulostuu sopiva virheviesti, jos ei syötä
 oikeanlaisia arvoja.
+
+07.04. 4h
+Tein ohjelmalle yhden testin lisää. En voinut tehdä enempää, sillä tämän viikon tavoitteenani ole tehdä graafinen käyttöliittymä.
+Korjasin README.md -dokumentin puuteet sekä tein luokkakaavion sovelluksen luokista. Näiden lisäksi tein testikattavuusraportin.
