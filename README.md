@@ -1,13 +1,26 @@
-# Otsikko
+# Biotietokanta
+Sovellus on yksikertaistettu genomiselain, jonka avulla voi etsiä, mistä lajista tuntematon DNA-sekvenssi on peräisin. Sovellusta voi käyttää kirjautumatta, jolloin vain lajin hakeminen sekvenssin perusteella on mahdollista. Kirjautuneena käyttäjän puolestaan on lajin haun lisäksi mahdollista lisätä lajeja ja sekvenssejä tietokantaan.
 
+## Dokumentaatio
 
-**Vaatimusmäärittely**
+[vaatimusmäärittely](/dokumentointi/dokumentointi)
+[arkkitehtuurikuvaus](/dokumentointi/arkkitehtuuri.md)
+[tyoaikakirjanpito](/tyoaikakirjanpito)
+käyttöohje
+testausdokumentti
 
-[alustava määrittelydokumentti](/dokumentointi/dokumentointi)
-[arkkitehtuuri](/dokumentointi/arkkitehtuuri.md)
+## Komentorivikomennot
 
+# Testaus
+Testit suoritetaan komennolla: mvn test
+Testikattavuusraportti luodaan komennolla: mvn jacoco:report
 
+# Suoritettavan jarin generointi 
+Komennolla: mvn package
 
-**Työaikakirjanpito**
+# JavaDoc:n generointi
+Komennolla: mvn javadoc:javadoc
 
-[harjoitustyöhön käytetty aika](/tyoaikakirjanpito)
+# Checkstyle.xml -tiedoston määrittelemät tarkistukset
+Komennolla: mvn jxr:jxr checkstyle:checkstyle
+
