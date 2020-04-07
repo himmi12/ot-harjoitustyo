@@ -4,15 +4,20 @@ Sovellus on yksikertaistettu genomiselain, jonka avulla voi etsiä, mistä lajis
 ## Dokumentaatio
 
 käyttöohje
+
 [vaatimusmäärittely](/dokumentointi/dokumentointi)
+
 [arkkitehtuurikuvaus](/dokumentointi/arkkitehtuuri.md)
+
 [tyoaikakirjanpito](/tyoaikakirjanpito)
+
 testausdokumentti
 
 ## Komentorivikomennot
 
 # Testaus
 Testit suoritetaan komennolla: mvn test
+
 Testikattavuusraportti luodaan komennolla: mvn jacoco:report
 
 # Suoritettavan jarin generointi 
