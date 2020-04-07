@@ -12,7 +12,7 @@ import java.util.List;
 
 
 
-public class Tietokanta implements LajiDao<Laji, Integer> {
+public class LajiDaoClass implements LajiDao<Laji, Integer> {
     
 //    public void luoTauluSekvenssit() throws SQLException {
 //        Connection conn = DriverManager.getConnection("jdbc:sqlite:biotietokanta.db");
