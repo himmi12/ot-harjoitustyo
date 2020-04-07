@@ -1,9 +1,12 @@
+package fi.himmiTest;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
+import fi.himmi.Biotietokanta;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
@@ -19,6 +22,10 @@ public class BiotietokantaTest {
     @Before
     public void setUp() {
         biotietokanta = new Biotietokanta();
+    }
+    @Test
+    public void tietokantaOnOlemassa() {
+        assertTrue(biotietokanta!=null);
     }
     
     @Test

@@ -1,3 +1,5 @@
+package fi.himmi;
+
 
 import java.util.Scanner;
 import java.sql.SQLException;

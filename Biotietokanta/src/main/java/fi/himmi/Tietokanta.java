@@ -1,4 +1,8 @@
+package fi.himmi;
 
+
+import fi.himmi.LajiDao;
+import fi.himmi.Laji;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
