@@ -1,3 +1,3 @@
 # Otsikko
 
-![kuva](/Screenshot (23).png)
+![kuva](https://github.com/himmi12/ot-harjoitustyo/blob/master/Screenshot%20(23).png)
