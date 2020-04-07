@@ -15,17 +15,17 @@ testausdokumentti
 
 ## Komentorivikomennot
 
-# Testaus
+### Testaus
 Testit suoritetaan komennolla: mvn test
 
 Testikattavuusraportti luodaan komennolla: mvn jacoco:report
 
-# Suoritettavan jarin generointi 
+### Suoritettavan jarin generointi 
 Komennolla: mvn package
 
-# JavaDoc:n generointi
+### JavaDoc:n generointi
 Komennolla: mvn javadoc:javadoc
 
-# Checkstyle.xml -tiedoston määrittelemät tarkistukset
+### Checkstyle.xml -tiedoston määrittelemät tarkistukset
 Komennolla: mvn jxr:jxr checkstyle:checkstyle
 
