@@ -1,3 +1,3 @@
 # Otsikko
 
-![kuva](Screenshot (23).png)
+![kuva](/Screenshot (23).png)
