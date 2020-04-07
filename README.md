@@ -1,6 +1,6 @@
 **Vaatimusmäärittely**
 
-[alustava määrittelydokumentti](/harjoitustyo/dokumentointi)
+[alustava määrittelydokumentti](/dokumentointi/dokumentointi)
 
 
 
