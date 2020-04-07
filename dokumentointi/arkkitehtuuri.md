@@ -1,2 +1,2 @@
 
-![kuva](file:///C:/Users/himmi/Downloads/arkkitehtuuri.pdf)
+![kuva](file:///C:/Users/himmi/Pictures/Screenshots/Screenshot (23))
