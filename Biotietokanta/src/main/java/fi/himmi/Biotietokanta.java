@@ -10,10 +10,12 @@ import java.util.List;
 public class Biotietokanta {
     
     private List<Kayttaja>kayttajat;
+    private List<Laji>lajit;
     
     public Biotietokanta() {
         
         this.kayttajat=new ArrayList<>();
+        this.lajit=new ArrayList<>();
     }
     public boolean luoTunnus(String tunnus, String salasana) {
 
@@ -85,5 +87,7 @@ public class Biotietokanta {
 //        System.out.println("Laji lisattiin");
 //
 //    }
-
+    public void lisaa(String sekvenssi, String nimi) {
+        
+    }
 }
