@@ -9,7 +9,7 @@ käyttöohje
 
 [arkkitehtuurikuvaus](/dokumentointi/arkkitehtuuri.md)
 
-[tyoaikakirjanpito](/tyoaikakirjanpito)
+[tyoaikakirjanpito](/dokumentointi/tyoaikakirjanpito)
 
 testausdokumentti
 
