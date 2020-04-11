@@ -1,8 +1,5 @@
 package fi.himmi;
 
-
-
-import fi.himmi.Biotietokanta;
 import javafx.stage.Stage;
 import javafx.application.Application;
 import javafx.scene.Scene;
