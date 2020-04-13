@@ -7,6 +7,7 @@ package fi.himmiTest;
  */
 
 import fi.himmi.Biotietokanta;
+import java.util.List;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
@@ -50,5 +51,29 @@ public class BiotietokantaTest {
         biotietokanta.luoTunnus("testi6", "salasana");
         assertTrue(biotietokanta.kirjauduSisaan("testi6", "salasana")==1);
         assertTrue(biotietokanta.kirjauduSisaan("vaaraTunnus", "vaaraSalasana")==-1);
-    }   
+    }
+    @Test
+    public void lisattavaSekvenssiAito() {
+        assertTrue(biotietokanta.add("atcg", "Testi")==1);
+        assertTrue(biotietokanta.add("atcb", "Virhe")==0);
+    }
+    @Test
+    public void lajinLisaaminenToimii() {
+        biotietokanta.add("attt", "Laji1");
+        assertTrue(biotietokanta.add("atcg", "Laji2")==1);
+        assertTrue(biotietokanta.add("attt", "Laji1")==-1);
+    }
+    @Test
+    public void lajinHakeminenToimii() {
+        biotietokanta.add("aaaatttt", "Laji3");
+        biotietokanta.add("ccaattgg", "Laji4");
+        
+        List<String>lajit = biotietokanta.search("aatt");
+        String vastaus = "";
+        
+        for (String s: lajit) {
+            vastaus=vastaus+" "+s;
+        }
+        assertTrue(vastaus.equals(""+" "+"Laji3"+" "+"Laji4"));
+    }
 }
