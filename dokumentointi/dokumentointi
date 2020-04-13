@@ -21,16 +21,16 @@ SUUNNITELTU TOIMINNALLISUUS
   * käyttäjä voi luoda järjestelmään käyttäjätunnuksen ja salasanan (TEHTY)
     * Käyttäjätunnuksen tulee olla uniikki ja salasanan vähintään 6 merkkiä pitkä (TEHTY)
   * käyttäjä voi kirjautua järjestelmään (syötetään käyttäjätunnus ja salasana) (TEHTY)
-    * Järjestelmä ilmoittaa, jos käyttäjää ei ole luotu
-  * käyttäjä voi liittää tekstikenttään DNA-sekvenssin pätkän ja hakea, mistä lajista sekvenssi on peräisin. Jos käyttäjän sekvenssi ei
-  vastaa mitään lajia, käyttäjälle kerrotaan tästä
+    * Järjestelmä ilmoittaa, jos käyttäjää ei ole luotu (TEHTY)
+  * käyttäjä voi liittää tekstikenttään DNA-sekvenssin pätkän ja hakea, mistä lajista tai lajeista sekvenssi on peräisin. Jos käyttäjän
+  sekvenssi ei vastaa mitään lajia, käyttäjälle kerrotaan tästä (TEHTY)
   
 * kirjautuneena:
-  * käyttäjä voi liittää tekstikenttään DNA-sekvenssin pätkän ja hakea, mistä lajista sekvenssi on peräisin
-  * käyttäjä voi luoda järjestelmään uuden DNA-sekvenssin
-    * Järjestelmä tarkastaa, että sekvenssi sisältää vain kirjaimia a,t,c ja g
+  * käyttäjä voi liittää tekstikenttään DNA-sekvenssin pätkän ja hakea, mistä lajista sekvenssi on peräisin (TEHTY)
+  * käyttäjä voi luoda järjestelmään uuden DNA-sekvenssin (TEHTY)
+    * Järjestelmä tarkastaa, että sekvenssi sisältää vain kirjaimia a,t,c ja g (TEHTY)
     * Luotu sekvenssi tulee nimetä jonkin lajin mukaan
-      * Järjestelmä tarkastaa, että lajia ei ole vielä tietokannassa
+      * Järjestelmä tarkastaa, että lajia ei ole vielä tietokannassa (TEHTY)
   * käyttäjä voi kirjautua ulos (TEHTY)
   
 * Jatkokehitysideoita:
