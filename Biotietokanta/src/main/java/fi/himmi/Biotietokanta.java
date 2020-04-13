@@ -87,7 +87,39 @@ public class Biotietokanta {
 //        System.out.println("Laji lisattiin");
 //
 //    }
-    public void lisaa(String sekvenssi, String nimi) {
+    public boolean add(String sekvenssi, String nimi) {
         
+        for (String S: sekvenssi.split("")) {
+            
+            String s=S.toLowerCase();
+            if (s.equals("a") || s.equals("t") || s.equals("c") || s.equals("g") || s.equals("\n")) {
+            }
+            else {
+                System.out.println("Sekvenssi ei ole aito");
+                return false;
+            }
+        }        
+        if (!this.lajit.isEmpty()) {
+            int exists=0;            
+            for (Laji laji : this.lajit) {
+                if (laji.getLaji().equals(nimi)) {
+                    System.out.println("Laji on jo listassa");
+                    exists=1;
+                    break;
+                }                
+            }
+            if (exists==0) {
+                Laji uusiLaji = new Laji(sekvenssi, nimi);
+                this.lajit.add(uusiLaji);
+                System.out.println("Laji lisättiin");
+                return true;
+            }
+        }
+        else if (this.lajit.isEmpty()) {
+            Laji uusiLaji = new Laji(sekvenssi, nimi);
+            this.lajit.add(uusiLaji);
+            return true;
+        }
+        return false;
     }
 }

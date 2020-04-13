@@ -1,5 +1,6 @@
-package fi.himmi;
+package fi.himmi.gui;
 
+import fi.himmi.Biotietokanta;
 import javafx.stage.Stage;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -24,6 +25,8 @@ public class BiotietokantaSovellus extends Application {
     
     private String un;
     private String pw;
+    private String sequence;
+    private String species;
     
     @Override
     public void start(Stage window) throws Exception {
@@ -36,7 +39,7 @@ public class BiotietokantaSovellus extends Application {
         
         VBox pubView = new VBox();        
         pubView.setSpacing(20);
-        pubView.getChildren().addAll(new Label("Enter FASTA sequence(s)"), sequence, signIn, signUp);
+        pubView.getChildren().addAll(new Label("Enter FASTA sequence"), sequence, signIn, signUp);
         
         HBox pubLayout = new HBox();        
         pubLayout.getChildren().addAll(pubView);
@@ -69,11 +72,12 @@ public class BiotietokantaSovellus extends Application {
         Label passW = new Label("Password");
         Button toPrivateView = new Button("Sign in!");
         Button back = new Button("Back");
+        Label msg = new Label("");
         
         VBox signingIn = new VBox();
         
         signingIn.setSpacing(10);
-        signingIn.getChildren().addAll(userN, u, passW, p, toPrivateView, back);
+        signingIn.getChildren().addAll(userN, u, passW, p, msg, toPrivateView, back);
         
         // private view
         
@@ -82,11 +86,20 @@ public class BiotietokantaSovellus extends Application {
         Button search = new Button("Search");
         
         VBox searchArea = new VBox();
-        searchArea.getChildren().addAll(new Label("Enter FASTA sequence(s)"), seq, search);
+        searchArea.getChildren().addAll(new Label("Enter FASTA sequence"), seq, search);
+        
+        TextArea addSeq = new TextArea();
+        TextField addName = new TextField();
+        Button addButton = new Button("Add");
+        Label message = new Label("");
+        
+        VBox add = new VBox();
+        add.getChildren().addAll(new Label("Add FASTA sequence"), addSeq, new Label("Add the scientific name of the species"), addName, addButton, message);
         
         BorderPane priLayout = new BorderPane();
         priLayout.setLeft(searchArea);
-        priLayout.setRight(logout);
+        priLayout.setBottom(logout);
+        priLayout.setRight(add);
         
         Scene pub = new Scene(pubLayout);
         Scene newAccount = new Scene(signingUp);
@@ -106,6 +119,9 @@ public class BiotietokantaSovellus extends Application {
             if (reply==true) {
                 window.setScene(priv);
             }
+            else {
+                msg.setText("Incorrect username or password");
+            }
         });
         create.setOnAction((event) -> {
             this.un=username.getText();
@@ -124,12 +140,27 @@ public class BiotietokantaSovellus extends Application {
         logout.setOnAction((event) -> {
             window.setScene(pub);
         });
+        addButton.setOnAction((event) -> {
+            this.sequence=addSeq.getText();
+            this.species=addName.getText();
+            
+            boolean reply=bioDb.add(this.sequence, this.species);
+            if (reply==true) {
+                message.setText("Succeeded");
+            }
+            else if (reply==false) {
+                message.setText("Failed");
+            }
+        });
         
         window.setScene(pub);
         window.show();
     }
     public static void main(String[] args) {
         launch(BiotietokantaSovellus.class);
+//        Biotietokanta testi = new Biotietokanta();
+//        testi.add("ATTTAAGCGATTTTTTTTCCCTCCTTCATCTCCGGGCCTCGGATAAGATGACGGCTTGGGTGATGCACGAAATAACGCACGTGATTGATTAGACCTGGCTTGGCTTGGCTAGGGAACGATCCAGGCGCGCTGGAGACCCC", "Homo sapiens");
+//        testi.add("ATTTAAGCGATTTTTTTTCCCTCCTTCATCTCCGGGCCTCGGATAAGATGACGGCTTGGGTGATGCACGAAATAACGCACGTGATTGATTAGACCTGGCTTGGCTTGGCTAGGGAACGATCCAGGCGCGCTGGAGACCCC", "Homo sapiens");
     }
     
 }
