@@ -17,39 +17,39 @@ public class Biotietokanta {
         this.kayttajat=new ArrayList<>();
         this.lajit=new ArrayList<>();
     }
-    public boolean luoTunnus(String tunnus, String salasana) {
+    public int luoTunnus(String tunnus, String salasana) {
 
         if (salasana.length()<6) {
-            System.out.println("Salasana on liian lyhyt. Keksi toinen salasana.");
-            return false;
+            // System.out.println("Salasana on liian lyhyt. Keksi toinen salasana.");
+            return -1;
         }
 
         if (this.kayttajat.isEmpty()) {
             Kayttaja uusiKayttaja = new Kayttaja(tunnus, salasana);
-            System.out.println("Käyttäjätunnus on luotu. Kirjaudu sisään.");
+            // System.out.println("Käyttäjätunnus on luotu. Kirjaudu sisään.");
             this.kayttajat.add(uusiKayttaja);
-            return true;
+            return 1;
         }
         else if (!this.kayttajat.isEmpty()) {
             int onnistuuko=1;
             for (Kayttaja kayttajatunnus : this.kayttajat) {
                 if (kayttajatunnus.getTunnus().equals(tunnus)) {
-                    System.out.println("Käyttäjätunnus on varattu. Keksi uusi käyttäjätunnus.");
+                    // System.out.println("Käyttäjätunnus on varattu. Keksi uusi käyttäjätunnus.");
                     onnistuuko=0;
-                    return false;
+                    return 0;
                 }
             }
             if (onnistuuko==1) {
                 Kayttaja uusiKayttaja = new Kayttaja(tunnus, salasana);
-                System.out.println("Käyttäjätunnus on luotu.");
+                // System.out.println("Käyttäjätunnus on luotu.");
                 this.kayttajat.add(uusiKayttaja);
-                return true;
+                return 1;
             }
         }
-        return false;
+        return -2;
     }
     
-    public boolean kirjauduSisaan(String tunnus, String salasana) {
+    public int kirjauduSisaan(String tunnus, String salasana) {
         int onnistuuko=0;
         if (!this.kayttajat.isEmpty()) {
             for (Kayttaja kayttajatunnus : this.kayttajat) {
@@ -57,22 +57,22 @@ public class Biotietokanta {
                 
                     if (kayttajatunnus.getSalasana().equals(salasana)) {
                         //vaihda näkymää
-                        System.out.println("Kirjautuminen onnistui");
+                        // System.out.println("Kirjautuminen onnistui");
                         onnistuuko=1;
-                        return true;
+                        return 1;
                     } else {
-                        System.out.println("Salasana on väärin.");
+                        // System.out.println("Salasana on väärin.");
                         onnistuuko=0;
-                        return false;
+                        return 0;
                     }
                 }
             }
         }
         if (onnistuuko==0) {            
-            System.out.println("Käyttäjätunnus on väärin.");
-            return false;
+            // System.out.println("Käyttäjätunnus on väärin.");
+            return -1;
         }
-        return false;
+        return -2;
     }
     
 //    public void lisaa() throws SQLException {
@@ -87,7 +87,7 @@ public class Biotietokanta {
 //        System.out.println("Laji lisattiin");
 //
 //    }
-    public boolean add(String sekvenssi, String nimi) {
+    public int add(String sekvenssi, String nimi) {
         
         for (String S: sekvenssi.split("")) {
             
@@ -95,15 +95,15 @@ public class Biotietokanta {
             if (s.equals("a") || s.equals("t") || s.equals("c") || s.equals("g") || s.equals("\n")) {
             }
             else {
-                System.out.println("Sekvenssi ei ole aito");
-                return false;
+                // System.out.println("Sekvenssi ei ole aito");
+                return 0;
             }
         }        
         if (!this.lajit.isEmpty()) {
             int exists=0;            
             for (Laji laji : this.lajit) {
                 if (laji.getLaji().equals(nimi)) {
-                    System.out.println("Laji on jo listassa");
+                    // System.out.println("Laji on jo listassa");
                     exists=1;
                     break;
                 }                
@@ -111,15 +111,25 @@ public class Biotietokanta {
             if (exists==0) {
                 Laji uusiLaji = new Laji(sekvenssi, nimi);
                 this.lajit.add(uusiLaji);
-                System.out.println("Laji lisättiin");
-                return true;
+                // System.out.println("Laji lisättiin");
+                return 1;
             }
         }
         else if (this.lajit.isEmpty()) {
             Laji uusiLaji = new Laji(sekvenssi, nimi);
             this.lajit.add(uusiLaji);
-            return true;
+            return 1;
         }
-        return false;
+        return -1;
+    }
+    public List search(String sekvenssi) {
+        List<String>matches = new ArrayList<>();
+        sekvenssi=sekvenssi.toUpperCase();        
+        for (Laji laji: this.lajit) {
+            if (laji.getData().contains(sekvenssi)) {
+                matches.add(laji.getLaji());
+            }
+        }
+        return matches;
     }
 }
