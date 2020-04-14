@@ -68,12 +68,13 @@ public class BiotietokantaTest {
         biotietokanta.add("aaaatttt", "Laji3");
         biotietokanta.add("ccaattgg", "Laji4");
         
-        List<String>lajit = biotietokanta.search("aatt");
+        List lajit = biotietokanta.search("aatt");
         String vastaus = "";
         
-        for (String s: lajit) {
+        for (Object s: lajit) {
             vastaus=vastaus+" "+s;
-        }
+            
+        }       
         assertTrue(vastaus.equals(""+" "+"Laji3"+" "+"Laji4"));
     }
 }

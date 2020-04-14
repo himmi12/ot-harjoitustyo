@@ -203,18 +203,7 @@ public class BiotietokantaSovellus extends Application {
         window.show();
     }
     public static void main(String[] args) {
-//        launch(BiotietokantaSovellus.class);
-        Biotietokanta biotietokanta= new Biotietokanta();
-        biotietokanta.add("aaaatttt", "Laji3");
-        biotietokanta.add("ccaattgg", "Laji4");
+        launch(BiotietokantaSovellus.class);
         
-        List<String>lajit = biotietokanta.search("aatt");
-        String vastaus = "";
-        System.out.println("For loopiin");
-        
-        for (String s: lajit) {
-            vastaus=vastaus+" "+s;
-            System.out.println(vastaus);
-        }
     }    
 }

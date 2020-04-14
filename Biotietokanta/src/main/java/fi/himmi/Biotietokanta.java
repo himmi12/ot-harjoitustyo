@@ -88,10 +88,10 @@ public class Biotietokanta {
 //
 //    }
     public int add(String sekvenssi, String nimi) {
+        sekvenssi=sekvenssi.toLowerCase();
         
-        for (String S: sekvenssi.split("")) {
+        for (String s: sekvenssi.split("")) {
             
-            String s=S.toLowerCase();
             if (s.equals("a") || s.equals("t") || s.equals("c") || s.equals("g") || s.equals("\n")) {
             }
             else {
@@ -103,28 +103,28 @@ public class Biotietokanta {
             int exists=0;            
             for (Laji laji : this.lajit) {
                 if (laji.getLaji().equals(nimi)) {
-                    // System.out.println("Laji on jo listassa");
-                    exists=1;
-                    break;
+                    System.out.println("Laji on jo listassa");
+                    return -1;
                 }                
             }
             if (exists==0) {
                 Laji uusiLaji = new Laji(sekvenssi, nimi);
                 this.lajit.add(uusiLaji);
-                // System.out.println("Laji lisättiin");
+                System.out.println("Laji lisättiin");
                 return 1;
             }
         }
-        else if (this.lajit.isEmpty()) {
+        else {
             Laji uusiLaji = new Laji(sekvenssi, nimi);
             this.lajit.add(uusiLaji);
+            System.out.println("Laji lisättiin");
             return 1;
         }
-        return -1;
+        return -2;
     }
     public List search(String sekvenssi) {
         List<String>matches = new ArrayList<>();
-        sekvenssi=sekvenssi.toUpperCase();        
+        sekvenssi=sekvenssi.toLowerCase();        
         for (Laji laji: this.lajit) {
             if (laji.getData().contains(sekvenssi)) {
                 matches.add(laji.getLaji());
