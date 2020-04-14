@@ -35,3 +35,15 @@ oikeanlaisia arvoja.
 07.04. 4h
 Tein ohjelmalle yhden testin lisää. En voinut tehdä enempää, sillä tämän viikon tavoitteenani ole tehdä graafinen käyttöliittymä.
 Korjasin README.md -dokumentin puuteet sekä tein luokkakaavion sovelluksen luokista. Näiden lisäksi tein testikattavuusraportin.
+
+VIIKKO5 
+
+25,5h (edelliset) +9,5h (viikko5) =35h (yhteensä)
+
+13.04. 4h
+Tein sovellukseen toiminnot siihen, että erityiskäyttäjä voi lisätä sekvenssejä ja lajien nimiä, jolloin ne tulevat tavallisen käyttäjän ja toisten erikoiskäyttäjien haettavaksi. Tein testit uutta koodia varten.
+
+14.04. 5,5h 
+Korjasin kansiorakennettani ohjaajan kommentin mukaisesti. Viimeistelin testit ja katsoin, että testikattavuusraportin tuottaminen on mahdollista. Noudatin viikon 5 ohjeita.
+
+
