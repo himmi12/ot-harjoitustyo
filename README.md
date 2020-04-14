@@ -5,11 +5,11 @@ Sovellus on yksikertaistettu genomiselain, jonka avulla voi etsiä, mistä lajis
 
 käyttöohje
 
-[vaatimusmäärittely](/dokumentointaatio/vaatimusmaarittely.md)
+[vaatimusmäärittely](/dokumentaatio/vaatimusmaarittely.md)
 
-[arkkitehtuurikuvaus](/dokumentointaatio/arkkitehtuuri.md)
+[arkkitehtuurikuvaus](/dokumentaatio/arkkitehtuuri.md)
 
-[tyoaikakirjanpito](/dokumentointaatio/tyoaikakirjanpito.md)
+[tyoaikakirjanpito](/dokumentaatio/tyoaikakirjanpito.md)
 
 testausdokumentti
 
