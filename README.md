@@ -13,6 +13,10 @@ käyttöohje
 
 testausdokumentti
 
+## Releaset
+
+[viikko 5](https://github.com/himmi12/ot-harjoitustyo/releases/tag/viikko5)
+
 ## Komentorivikomennot
 
 ### Testaus
