@@ -46,4 +46,7 @@ Tein sovellukseen toiminnot siihen, että erityiskäyttäjä voi lisätä sekven
 14.04. 5,5h 
 Korjasin kansiorakennettani ohjaajan kommentin mukaisesti. Viimeistelin testit ja katsoin, että testikattavuusraportin tuottaminen on mahdollista. Noudatin viikon 5 ohjeita.
 
+VIIKKO6
 
+23.04. 1h
+Korjasin checkstyle-virheet
