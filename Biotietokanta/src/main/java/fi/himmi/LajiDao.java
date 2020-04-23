@@ -13,7 +13,7 @@ package fi.himmi;
 import java.sql.*;
 import java.util.*;
 
-public interface LajiDao<L,K> {
+public interface LajiDao<L,  K> {
     
     void create(L object) throws SQLException;
     L read(K key) throws SQLException;

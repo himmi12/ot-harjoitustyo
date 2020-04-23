@@ -45,7 +45,7 @@ public class LajiDaoClass implements LajiDao<Laji, Integer> {
                     + "data text"
                     + "laji text)").execute();
         
-        PreparedStatement stmt = connection.prepareStatement("INSERT INTO Sekvenssit (data, laji) values (?,?)",Statement.RETURN_GENERATED_KEYS);
+        PreparedStatement stmt = connection.prepareStatement("INSERT INTO Sekvenssit (data, laji) values (?,?)", Statement.RETURN_GENERATED_KEYS);
         System.out.println("Saatiin lisättyä tiedot");
         stmt.setString(1, laji.getData());
         stmt.setString(2, laji.getLaji());

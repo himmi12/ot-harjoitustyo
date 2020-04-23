@@ -16,17 +16,17 @@ public class Kayttaja {
     private String salasana;
     
     public Kayttaja(String tunnus, String salasana) {
-        this.tunnus=tunnus;
-        this.salasana=salasana;
+        this.tunnus = tunnus;
+        this.salasana = salasana;
     }
     public void setTunnus(String tunnus) {
-        this.tunnus=tunnus;
+        this.tunnus = tunnus;
     }
     public String getTunnus() {
         return this.tunnus;
     }
     public void setSalasana(String salasana) {
-        this.salasana=salasana;
+        this.salasana = salasana;
     }
     public String getSalasana() {
         return this.salasana;

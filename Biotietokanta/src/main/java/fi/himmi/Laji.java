@@ -15,8 +15,8 @@ public class Laji {
     private String lajinNimi;
     
     public Laji(String sekvenssi, String nimi) {
-        this.sekvenssi=sekvenssi;
-        this.lajinNimi=nimi;
+        this.sekvenssi = sekvenssi;
+        this.lajinNimi = nimi;
     }
     public String getLaji() {
         return this.lajinNimi;
@@ -25,9 +25,9 @@ public class Laji {
         return this.sekvenssi;
     }
     public void setLaji(String nimi) {
-        this.lajinNimi=nimi;
+        this.lajinNimi = nimi;
     }
     public void setData(String sekvenssi) {
-        this.sekvenssi=sekvenssi;
+        this.sekvenssi = sekvenssi;
     }
 }
