@@ -1,7 +1,6 @@
 package fi.himmi.gui;
 
 import fi.himmi.Biotietokanta;
-import java.util.ArrayList;
 import java.util.List;
 import javafx.stage.Stage;
 import javafx.application.Application;
@@ -13,6 +12,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.IOException;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -42,7 +45,7 @@ public class BiotietokantaSovellus extends Application {
         Label list = new Label("");
         
         VBox pubView = new VBox();        
-        pubView.setSpacing(20);
+        pubView.setSpacing(10);
         pubView.getChildren().addAll(new Label("Enter FASTA sequence"), sequence, srch, list, signIn, signUp);
         
         HBox pubLayout = new HBox();        

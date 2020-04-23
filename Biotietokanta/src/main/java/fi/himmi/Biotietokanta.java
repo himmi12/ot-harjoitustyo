@@ -68,7 +68,9 @@ public class Biotietokanta {
     public int add(String sekvenssi, String nimi) {
         sekvenssi = sekvenssi.toLowerCase();        
         for (String s: sekvenssi.split("")) {            
-            if (!s.equals("a") || !s.equals("t") || !s.equals("c") || !s.equals("g") || !s.equals("\n")) {
+            if (s.equals("a") || s.equals("t") || s.equals("c") || s.equals("g") || s.equals("\n")) {
+            }
+            else {
                 return 0;
             }
         }        
