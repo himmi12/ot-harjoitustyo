@@ -1,6 +1,6 @@
 package fi.himmi.gui;
 
-import fi.himmi.Biotietokanta;
+import fi.himmi.logics.Biotietokanta;
 import java.util.List;
 import javafx.stage.Stage;
 import javafx.application.Application;
@@ -13,9 +13,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-import java.io.FileWriter;
-import java.io.PrintWriter;
-import java.io.IOException;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates

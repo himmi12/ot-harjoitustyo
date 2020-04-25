@@ -1,8 +1,5 @@
-package fi.himmi;
+package fi.himmi.logics;
 
-
-import java.util.Scanner;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,19 +49,7 @@ public class Biotietokanta {
         }            
         return -1;
     }
-    
-//    public void lisaa() throws SQLException {
-//        System.out.println("Syötä lajin nimi");
-//        String laji = this.lukija.nextLine();
-//        System.out.println("Syötä sekvenssi");
-//        String sekvenssi = this.lukija.nextLine();
-//
-//        Laji uusiLaji = new Laji(sekvenssi, laji);
-//
-//        this.tietokanta.create(uusiLaji);
-//        System.out.println("Laji lisattiin");
-//
-//    }
+
     public int add(String sekvenssi, String nimi) {
         sekvenssi = sekvenssi.toLowerCase();        
         for (String s: sekvenssi.split("")) {            
@@ -81,8 +66,8 @@ public class Biotietokanta {
                 }                
             }
             Laji uusiLaji = new Laji(sekvenssi, nimi);
-            this.lajit.add(uusiLaji);
-            return 1;            
+                this.lajit.add(uusiLaji);
+                return 1;            
         } else {
             Laji uusiLaji = new Laji(sekvenssi, nimi);
             this.lajit.add(uusiLaji);

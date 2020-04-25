@@ -1,4 +1,4 @@
-package fi.himmi;
+package fi.himmi.logics;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

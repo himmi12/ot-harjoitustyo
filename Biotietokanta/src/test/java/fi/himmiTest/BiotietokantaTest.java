@@ -6,7 +6,7 @@ package fi.himmiTest;
  * and open the template in the editor.
  */
 
-import fi.himmi.Biotietokanta;
+import fi.himmi.logics.Biotietokanta;
 import java.util.List;
 import org.junit.Test;
 import static org.junit.Assert.*;
