@@ -113,9 +113,11 @@ public class BiotietokantaSovellus extends Application {
         Scene priv = new Scene(priLayout);
         
         signUp.setOnAction((event) -> {
+            sequence.setText("");
             window.setScene(newAccount);
         });
         signIn.setOnAction((event) -> {
+            sequence.setText("");
             window.setScene(account);
         });
         toPrivateView.setOnAction((event)-> {
@@ -123,6 +125,8 @@ public class BiotietokantaSovellus extends Application {
             this.pw=p.getText();            
             int reply=bioDb.kirjauduSisaan(this.un, this.pw);
             if (reply==1) {
+                u.setText("");
+                p.setText("");
                 window.setScene(priv);
             }
             else if (reply==0) {
@@ -137,6 +141,8 @@ public class BiotietokantaSovellus extends Application {
             this.pw=password.getText();            
             int reply=bioDb.luoTunnus(this.un, this.pw);
             if (reply==1) {
+                username.setText("");
+                password.setText("");
                 window.setScene(priv);
             } else if (reply==-1) {
                 info.setText("Password is too short.");
@@ -151,6 +157,7 @@ public class BiotietokantaSovellus extends Application {
             window.setScene(pub);
         });
         logout.setOnAction((event) -> {
+            seq.setText("");
             window.setScene(pub);
         });
         addButton.setOnAction((event) -> {
@@ -160,6 +167,8 @@ public class BiotietokantaSovellus extends Application {
             int reply=bioDb.add(this.sequence, this.species);
             if (reply==1) {
                 message.setText("Succeeded");
+                addSeq.setText("");
+                addName.setText("");
             }
             else if (reply==-1) {
                 message.setText(this.species+" exists in genome browser");
