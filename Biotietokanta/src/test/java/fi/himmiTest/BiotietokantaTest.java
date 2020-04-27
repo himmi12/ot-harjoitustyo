@@ -23,6 +23,7 @@ public class BiotietokantaTest {
     @Before
     public void setUp() {
         biotietokanta = new Biotietokanta();
+//        biotietokanta.editDb("kayttajat.txt");
     }
     @Test
     public void tietokantaOnOlemassa() {
