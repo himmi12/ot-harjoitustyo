@@ -50,3 +50,12 @@ VIIKKO6
 
 23.04. 1h
 Korjasin checkstyle-virheet
+
+25.04. 4h
+Yritin saada tietokannan totetumaan. En onnistunut.
+
+26.04. 1h
+Vaihdoin suunnitelmaa tietokanna tekemisen sijaan tiedon tallentamisesta tekstitiedostoon.
+
+27.04. 3h
+Toteutin uuden käyttjän luomisen ja sisään kirjautumisen siten, että tieto tallentuu tekstitiedostoon. Vielä tulisi toteuttaa tämä siten, että testaus ei häiriinny, sillä tällä hetkellä testaus häiriintyy, jos tekstitiedostoa ei ole tyhjennetty edellisen testauksen jälkeen.
