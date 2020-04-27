@@ -16,6 +16,7 @@ testausdokumentti
 ## Releaset
 
 [viikko 5](https://github.com/himmi12/ot-harjoitustyo/releases/tag/viikko5)
+[viikko 6](https://github.com/himmi12/ot-harjoitustyo/releases/tag/viikko6)
 
 ## Komentorivikomennot
 
