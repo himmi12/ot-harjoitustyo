@@ -3,7 +3,7 @@ Sovellus on yksikertaistettu genomiselain, jonka avulla voi etsiä, mistä lajis
 
 ## Dokumentaatio
 
-käyttöohje
+[käyttöohje](/dokumentaatio/kayttoohje.md)
 
 [vaatimusmäärittely](/dokumentaatio/vaatimusmaarittely.md)
 
