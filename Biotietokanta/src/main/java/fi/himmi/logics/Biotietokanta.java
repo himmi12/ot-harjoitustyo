@@ -55,14 +55,11 @@ public class Biotietokanta {
         
         if (onnistuuko.equals("Salasana väärin")) {
             return 0; //käyttäjätunnus löytyi mutta salasana on väärin
-        }
-        else if (onnistuuko.equals("Käyttäjätunnusta ei löytynyt")) {
+        } else if (onnistuuko.equals("Käyttäjätunnusta ei löytynyt")) {
             return -1; //käyttäjätunnusta ei ole luotu
-        }
-        else if (onnistuuko.equals("Kirjautuminen onnistui")) {
+        } else if (onnistuuko.equals("Kirjautuminen onnistui")) {
             return 1; //kirjautuminen onnistuu
-        }
-        else {
+        } else {
             return -2; //jotain on mennyt pieleen
         }    
     }
@@ -77,8 +74,7 @@ public class Biotietokanta {
         sekvenssi = sekvenssi.toLowerCase();        
         for (String s: sekvenssi.split("")) {            
             if (s.equals("a") || s.equals("t") || s.equals("c") || s.equals("g") || s.equals("\n")) {
-            }
-            else {
+            } else {
                 return 0;
             }
         }        
@@ -125,7 +121,7 @@ public class Biotietokanta {
             FileWriter writer = new FileWriter(tiedosto, true);
             BufferedWriter bufferedWriter = new BufferedWriter(writer); 
             bufferedWriter.newLine();
-            bufferedWriter.write(dataKayttajatunnus+":"+lajiSalasana); 
+            bufferedWriter.write(dataKayttajatunnus + ":" + lajiSalasana); 
             bufferedWriter.close();
         } catch (IOException e) {
 
@@ -144,7 +140,7 @@ public class Biotietokanta {
             FileReader reader = new FileReader(tiedosto);
             BufferedReader bufferedReader = new BufferedReader(reader); 
             String line;
-            Boolean tunnusOikein=false;
+            Boolean tunnusOikein = false;
             while ((line = bufferedReader.readLine()) != null) {
                 for (String s: line.split(":")) {
                     if (s.equals(tunnus)) {
@@ -152,12 +148,12 @@ public class Biotietokanta {
                             reader.close();
                             return "Tunnus löytyi"; // käyttäjä löytyi tietokannasta
                         } else if (ekaVaiToka == 2) {
-                            tunnusOikein=true;
+                            tunnusOikein = true;
                         }                        
-                    } else if (s.equals(salasana) && tunnusOikein==true && ekaVaiToka==2) {
+                    } else if (s.equals(salasana) && tunnusOikein == true && ekaVaiToka == 2) {
                             reader.close();
                             return "Kirjautuminen onnistui";
-                    } else if (!s.equals(salasana) && tunnusOikein==true && ekaVaiToka==2) {
+                    } else if (!s.equals(salasana) && tunnusOikein == true && ekaVaiToka == 2) {
                         return "Salasana väärin"; //käyttäjä löytyi mutta salasana väärin
                     }                    
                 }
