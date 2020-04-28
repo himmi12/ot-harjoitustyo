@@ -1,4 +1,4 @@
-## VIIKKO2
+# VIIKKO2
 
 ### 23.03.2020 1,5h
 Tein harjoitustyöhön tarvittavat kansiot samalla pohtien harjoitustyön aihetta. Luin ohjeita harjoitustyön tekemiseen ja aiheen valintaan. 
@@ -6,7 +6,7 @@ Tein harjoitustyöhön tarvittavat kansiot samalla pohtien harjoitustyön aihett
 ### 24.03.2020 2,5h
 Päätin lopullisesti harjoitustyön aiheen ja kirjoitin harjoitustyön alustavan määrittelydokumentin.
 
-## VIIKKO3
+# VIIKKO3
 
 ### 29.03.2020 1h
 Tein ohjelmaan alustavia rakenteita ja varmistin, että repositorioni juuresta löytyy Maven-projekti.
@@ -25,7 +25,7 @@ viikolla tietokantaa vaativaa haku-toiminnallisuutta ohjelmaan.
 
 Sain luomani testit toimimaan.
 
-## VIIKKO4
+# VIIKKO4
 
 ### 03.04. 4h
 Tein ohjelmalle graafisen käyttöliittymän, jonka avulla voi kirjautua sisään ja luoda tunnuksen. Tein näihin toimintoihin tarvittavat 
@@ -36,7 +36,7 @@ oikeanlaisia arvoja.
 Tein ohjelmalle yhden testin lisää. En voinut tehdä enempää, sillä tämän viikon tavoitteenani ole tehdä graafinen käyttöliittymä.
 Korjasin README.md -dokumentin puuteet sekä tein luokkakaavion sovelluksen luokista. Näiden lisäksi tein testikattavuusraportin.
 
-## VIIKKO5 
+# VIIKKO5 
 
 25,5h (edelliset) +9,5h (viikko5) =35h (yhteensä)
 
@@ -46,7 +46,7 @@ Tein sovellukseen toiminnot siihen, että erityiskäyttäjä voi lisätä sekven
 ### 14.04. 5,5h 
 Korjasin kansiorakennettani ohjaajan kommentin mukaisesti. Viimeistelin testit ja katsoin, että testikattavuusraportin tuottaminen on mahdollista. Noudatin viikon 5 ohjeita.
 
-## VIIKKO6
+# VIIKKO6
 
 35h (edelliset) + 11h (viikko6) = 46h (yhteensä)
 
