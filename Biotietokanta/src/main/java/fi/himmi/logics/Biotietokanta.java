@@ -2,13 +2,11 @@ package fi.himmi.logics;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.FileReader;
-import java.io.InputStreamReader;
 
 
 public class Biotietokanta {
@@ -21,12 +19,20 @@ public class Biotietokanta {
         this.kayttajat = new ArrayList<>();
         this.lajit = new ArrayList<>();
     }
+    
+    /**
+     * Luodaan käyttäjätunnus, jos luotava tunnus täyttää tunnuksen luomisen kriteerit.
+     * @param tunnus
+     * @param salasana
+     * @return -1, 0 tai 1 
+     */
+    
     public int luoTunnus(String tunnus, String salasana) {
         if (salasana.length() < 6) {
             return -1; // salasana liian lyhyt            
         }
         String onko = searchFromDb("kayttajat.txt", tunnus, salasana, 1); // numero 1 kertoo että haetaan käyttäjätunnusta
-        if (onko.equals("t")) {
+        if (onko.equals("Tunnus löytyi")) {
             return 0; //tunnus on varattu
         } else {
             Kayttaja uusiKayttaja = new Kayttaja(tunnus, salasana);
@@ -34,39 +40,38 @@ public class Biotietokanta {
             addToDb("kayttajat.txt", tunnus, salasana);
             return 1; //lisätään tietokantaan
         }
-
     }
+    /**
+     * Tarkistetaan, onko tunnus tietokannassa ja vastaako syötteen salasana tietokannan salasanaa.
+     * @param tunnus
+     * @param salasana
+     * @return -2,-1,0 tai 1 Riippuen siitä, mikä kirjautumisessa on epäonnistunut vai onko kirjautuminen 
+     * onnistunut
+     */
     
     public int kirjauduSisaan(String tunnus, String salasana) {
         
         String onnistuuko = searchFromDb("kayttajat.txt", tunnus, salasana, 2); 
         
-        if (onnistuuko.equals("v")) {
+        if (onnistuuko.equals("Salasana väärin")) {
             return 0; //käyttäjätunnus löytyi mutta salasana on väärin
         }
-        else if (onnistuuko.equals("f")) {
+        else if (onnistuuko.equals("Käyttäjätunnusta ei löytynyt")) {
             return -1; //käyttäjätunnusta ei ole luotu
         }
-        else if (onnistuuko.equals("onnistuu")) {
+        else if (onnistuuko.equals("Kirjautuminen onnistui")) {
             return 1; //kirjautuminen onnistuu
         }
         else {
             return -2; //jotain on mennyt pieleen
         }    
-//        if (!this.kayttajat.isEmpty()) {
-//            for (Kayttaja kayttajatunnus : this.kayttajat) {
-//                if (kayttajatunnus.getTunnus().equals(tunnus)) {
-//                
-//                    if (kayttajatunnus.getSalasana().equals(salasana)) {
-//                        return 1; //salasana on oikein
-//                    } else {
-//                        return 0; //salasana on väärin
-//                    }
-//                }
-//            }
-//        }            
-//        return -1; //käyttäjätunnusta ei löydy
     }
+    /**
+     * Lisätään sekvenssi ja lajin nimi tietokantaan (toistaiseksi vielä listaan), jos kriteerit täyttyvät.
+     * @param sekvenssi
+     * @param nimi
+     * @return -1,0 tai 1 riippuen siitä, mikä on mennyt pieleen vai onko lisääminen onnistunut
+     */
 
     public int add(String sekvenssi, String nimi) {
         sekvenssi = sekvenssi.toLowerCase();        
@@ -92,6 +97,12 @@ public class Biotietokanta {
             return 1;
         }
     }
+    /**
+     * Haetaan lajin nimi tietokannasta sen perusteella sisältääkö tietokannan sekvenssi haettavan sekvenssin.
+     * (Toistaiseksi toteutettu listana.)
+     * @param sekvenssi
+     * @return lista, sopivista lajien nimistä
+     */
     public List search(String sekvenssi) {
         List<String> matches = new ArrayList<>();
         sekvenssi = sekvenssi.toLowerCase();        
@@ -102,6 +113,13 @@ public class Biotietokanta {
         }
         return matches;
     }
+    /**
+     * Lisätään valittuun tekstitiedostoon joko käyttäjätunnus ja salasana tai DNA-sekvenssi ja laji.
+     * Tiedostoksi voi valita joko kayttajat tai sekvenssit -tiedoston
+     * @param tiedosto
+     * @param dataKayttajatunnus
+     * @param lajiSalasana 
+     */
     public void addToDb(String tiedosto, String dataKayttajatunnus, String lajiSalasana) {
         try {
             FileWriter writer = new FileWriter(tiedosto, true);
@@ -113,6 +131,14 @@ public class Biotietokanta {
 
         }
     }
+    /**
+     * Hakee valitusta tekstitiedostosta valittuja tietoja. 
+     * @param tiedosto
+     * @param tunnus
+     * @param salasana
+     * @param ekaVaiToka (määrittelee, etsitäänkö tunnusta vai tietyn tunnuksen salasanaa)
+     * @return merkkijono, joka kertoo, onnistuiko haku tai miksi ei onnistunut
+     */
     public String searchFromDb(String tiedosto, String tunnus, String salasana, int ekaVaiToka) {
         try {
             FileReader reader = new FileReader(tiedosto);
@@ -124,20 +150,20 @@ public class Biotietokanta {
                     if (s.equals(tunnus)) {
                         if (ekaVaiToka == 1) {
                             reader.close();
-                            return "t"; // käyttäjä löytyi tietokannasta
+                            return "Tunnus löytyi"; // käyttäjä löytyi tietokannasta
                         } else if (ekaVaiToka == 2) {
                             tunnusOikein=true;
                         }                        
                     } else if (s.equals(salasana) && tunnusOikein==true && ekaVaiToka==2) {
                             reader.close();
-                            return "onnistuu";
+                            return "Kirjautuminen onnistui";
                     } else if (!s.equals(salasana) && tunnusOikein==true && ekaVaiToka==2) {
-                        return "v"; //käyttäjä löytyi mutta salasana väärin
+                        return "Salasana väärin"; //käyttäjä löytyi mutta salasana väärin
                     }                    
                 }
             }
             reader.close();
-            return "f"; //käyttäjätunnusta ei löytnyt
+            return "Käyttäjätunnusta ei löytynyt"; //käyttäjätunnusta ei löytnyt
  
         } catch (IOException e) {
 
