@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.control.PasswordField;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -33,6 +34,7 @@ public class BiotietokantaSovellus extends Application {
     @Override
     public void start(Stage window) throws Exception {
         Biotietokanta bioDb = new Biotietokanta();
+        this.pw = "";
         
         //public view
         TextArea sequence = new TextArea();        
@@ -51,7 +53,7 @@ public class BiotietokantaSovellus extends Application {
         //Sign up -view
         
         TextField username = new TextField();
-        TextField password = new TextField();
+        PasswordField password = new PasswordField();
         Label user = new Label("Username");
         Label passw = new Label("Password");
         Button create = new Button("Create an account");
@@ -72,7 +74,7 @@ public class BiotietokantaSovellus extends Application {
         // sign in -view
         
         TextField u = new TextField();
-        TextField p = new TextField();
+        PasswordField p = new PasswordField();
         Label userN = new Label("Username");
         Label passW = new Label("Password");
         Button toPrivateView = new Button("Sign in!");
@@ -120,9 +122,10 @@ public class BiotietokantaSovellus extends Application {
             sequence.setText("");
             window.setScene(account);
         });
+
         toPrivateView.setOnAction((event)-> {
-            this.un=u.getText();
-            this.pw=p.getText();            
+            this.un = u.getText();
+            this.pw = p.getText();            
             int reply=bioDb.kirjauduSisaan(this.un, this.pw);
             if (reply==1) {
                 u.setText("");
