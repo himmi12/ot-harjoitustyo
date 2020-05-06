@@ -34,6 +34,8 @@ public class BiotietokantaSovellus extends Application {
     @Override
     public void start(Stage window) throws Exception {
         Biotietokanta bioDb = new Biotietokanta();
+        bioDb.fromDbToSeq();
+        bioDb.fromDbToUser();
         this.pw = "";
         
         //public view

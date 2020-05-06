@@ -1,0 +1,5 @@
+himmi:123456
+tutkija:kokeillaan
+adeniini:sytosiini
+kayttaja:salasana:
+heipodei:123456:
