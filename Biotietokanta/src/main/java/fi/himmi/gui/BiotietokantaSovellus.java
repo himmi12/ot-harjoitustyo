@@ -13,6 +13,13 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.PasswordField;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
+import javafx.scene.paint.Color;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -44,24 +51,36 @@ public class BiotietokantaSovellus extends Application {
         Button signUp = new Button("Sign up");
         Button srch = new Button("Search");
         Label list = new Label("");
+        list.setTextFill(Color.WHITE);
+        Label intro = new Label("Enter a FASTA sequence");
+        intro.setTextFill(Color.WHITE);
+        Image image = new Image("file:fluorisoiva.png");
+        BackgroundImage bimage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+        Background bg = new Background(bimage);
         
         VBox pubView = new VBox();        
         pubView.setSpacing(10);
-        pubView.getChildren().addAll(new Label("Enter FASTA sequence"), sequence, srch, list, signIn, signUp);
+        pubView.getChildren().addAll(intro, sequence, srch, list, signIn, signUp);
         
         HBox pubLayout = new HBox();        
         pubLayout.getChildren().addAll(pubView);
+        pubLayout.setBackground(bg);
         
         //Sign up -view
         
         TextField username = new TextField();
+        username.setMaxWidth(150);
         PasswordField password = new PasswordField();
+        password.setMaxWidth(150);
         Label user = new Label("Username");
         Label passw = new Label("Password");
+        user.setTextFill(Color.WHITE);
+        passw.setTextFill(Color.WHITE);
         Button create = new Button("Create an account");
         Label info = new Label("");
-        
+        info.setTextFill(Color.WHITE);        
         Label accountExists = new Label("Already have an account?");
+        accountExists.setTextFill(Color.WHITE);
         Button toSigningIn = new Button("Sign in!");
         
         HBox changeTheView = new HBox();
@@ -73,20 +92,29 @@ public class BiotietokantaSovellus extends Application {
         signingUp.setSpacing(10);
         signingUp.getChildren().addAll(user, username, passw, password, create, info, changeTheView);
         
+        signingUp.setBackground(bg);
+        
         // sign in -view
         
         TextField u = new TextField();
+        u.setMaxWidth(150);
         PasswordField p = new PasswordField();
+        p.setMaxWidth(150);
         Label userN = new Label("Username");
+        userN.setTextFill(Color.WHITE);
         Label passW = new Label("Password");
+        passW.setTextFill(Color.WHITE);
         Button toPrivateView = new Button("Sign in!");
         Button back = new Button("Back");
         Label msg = new Label("");
+        msg.setTextFill(Color.WHITE);
         
         VBox signingIn = new VBox();
         
         signingIn.setSpacing(10);
         signingIn.getChildren().addAll(userN, u, passW, p, msg, toPrivateView, back);
+        
+        signingIn.setBackground(bg);
         
         // private view
         
@@ -94,27 +122,38 @@ public class BiotietokantaSovellus extends Application {
         Button logout = new Button("Log out");
         Button search = new Button("Search");
         Label result = new Label("");
+        result.setTextFill(Color.WHITE);
+        Label enter = new Label("Enter a FASTA sequence");
+        enter.setTextFill(Color.WHITE);
         
         VBox searchArea = new VBox();
-        searchArea.getChildren().addAll(new Label("Enter FASTA sequence"), seq, search, result);
+        searchArea.getChildren().addAll(enter, seq, search, result);
         
         TextArea addSeq = new TextArea();
         TextField addName = new TextField();
+        addName.setMaxWidth(300);
         Button addButton = new Button("Add");
         Label message = new Label("");
+        message.setTextFill(Color.WHITE);
         
         VBox add = new VBox();
-        add.getChildren().addAll(new Label("Add FASTA sequence"), addSeq, new Label("Add the scientific name of the species"), addName, addButton, message);
+        Label addS = new Label("Add a FASTA sequence");
+        addS.setTextFill(Color.WHITE);
+        Label addSN = new Label("Add the scientific name of the species");
+        addSN.setTextFill(Color.WHITE);
+        add.getChildren().addAll(addS, addSeq, addSN, addName, addButton, message);
         
         BorderPane priLayout = new BorderPane();
         priLayout.setLeft(searchArea);
         priLayout.setBottom(logout);
         priLayout.setRight(add);
         
-        Scene pub = new Scene(pubLayout);
-        Scene newAccount = new Scene(signingUp);
-        Scene account = new Scene(signingIn);
-        Scene priv = new Scene(priLayout);
+        priLayout.setBackground(bg);
+        
+        Scene pub = new Scene(pubLayout, 1000, 600);
+        Scene newAccount = new Scene(signingUp, 1000, 600);
+        Scene account = new Scene(signingIn, 1000, 600);
+        Scene priv = new Scene(priLayout, 1000, 600);
         
         signUp.setOnAction((event) -> {
             sequence.setText("");

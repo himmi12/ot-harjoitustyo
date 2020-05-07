@@ -48,15 +48,6 @@ public class Biotietokanta {
             addToDb("kayttajat.txt", tunnus, salasana);
             return 1;
         }
-//        String onko = searchOne("kayttajat.txt", tunnus, 1); // numero 1 kertoo että haetaan käyttäjätunnusta
-//        if (onko.equals(tunnus)) {
-//            return 0; //tunnus on varattu
-//        } else {
-//            Kayttaja uusiKayttaja = new Kayttaja(tunnus, salasana);
-//            this.kayttajat.add(uusiKayttaja);
-//            addToDb("kayttajat.txt", tunnus, salasana);
-//            return 1; //lisätään tietokantaan
-//        }
     }
     /**
      * Tarkistetaan, onko tunnus tietokannassa ja vastaako syötteen salasana tietokannan salasanaa.
@@ -76,18 +67,7 @@ public class Biotietokanta {
                 }                
             }
         }
-        return -1; //käyttäjätunnusta ei ole
-//        String onnistuuko = searchTwo("kayttajat.txt", tunnus, salasana, 1); 
-//        
-//        if (onnistuuko.equals("Salasana väärin")) {
-//            return 0; //käyttäjätunnus löytyi mutta salasana on väärin
-//        } else if (onnistuuko.equals("Käyttäjätunnusta ei löytynyt")) {
-//            return -1; //käyttäjätunnusta ei ole luotu
-//        } else if (onnistuuko.equals("Kirjautuminen onnistui")) {
-//            return 1; //kirjautuminen onnistuu
-//        } else {
-//            return -2; //jotain on mennyt pieleen
-//        }    
+        return -1; //käyttäjätunnusta ei ole   
     }
     /**
      * Lisätään sekvenssi ja lajin nimi tietokantaan (toistaiseksi vielä listaan), jos kriteerit täyttyvät.
@@ -99,21 +79,12 @@ public class Biotietokanta {
     public int add(String sekvenssi, String nimi) {
         sekvenssi = sekvenssi.toLowerCase();        
         for (String s: sekvenssi.split("")) {  
-            System.out.println(s);
             if (s.equals("a") || s.equals("t") || s.equals("c") || s.equals("g") || s.equals("\n")) {
             } else {
                 return 0;
             }
         } 
-//        String onko = searchOne("sekvenssit.txt", nimi, 2); 
-//        if (onko.equals(nimi)) {
-//            return -1; //laji on jo lisätty tietokantaan
-//        } else {
-//            Laji uusiLaji = new Laji(sekvenssi, nimi);
-//            this.lajit.add(uusiLaji);
-//            addToDb("sekvenssit.txt", sekvenssi, nimi);
-//            return 1; //lisätään tietokantaan
-//        }
+
         if (!this.lajit.isEmpty()) {            
             for (Laji laji : this.lajit) {
                 if (laji.getLaji().equals(nimi)) { //laji on jo listassa
@@ -171,12 +142,17 @@ public class Biotietokanta {
                 }
             }
             int i = 0;
-            while (i < seq.size()) {
-                Laji l = new Laji(seq.get(i), species.get(i));
-                this.lajit.add(l);
-                i++;
-            }       
-        } catch (IOException e) {  
+            if (seq.isEmpty()) {
+                this.lajit.isEmpty();
+            } else {
+                while (i < seq.size()) {
+                    Laji l = new Laji(seq.get(i), species.get(i));
+                    this.lajit.add(l);
+                    i++;
+                }
+            }
+
+        } catch (IOException e) {
         }
     }
     public void fromDbToUser() {
@@ -200,11 +176,16 @@ public class Biotietokanta {
                 i++;
             }
             i = 0;
-            while (i < parilliset.size()) {
-                Kayttaja k = new Kayttaja(parilliset.get(i), parittomat.get(i));
-                this.kayttajat.add(k);
-                i++;
+            if (parilliset.isEmpty()) {
+                this.kayttajat.isEmpty();
+            } else {
+                while (i < parilliset.size()) {
+                    Kayttaja k = new Kayttaja(parilliset.get(i), parittomat.get(i));
+                    this.kayttajat.add(k);
+                    i++;
+                }
             }
+           
         } catch (IOException e) {
             
         }
@@ -227,125 +208,6 @@ public class Biotietokanta {
 
         }
     }
-    /**
-     * Hakee valitusta tekstitiedostosta valittuja tietoja. 
-     * @param tiedosto
-     * @param tunnusSekvenssi
-     * @param salasanaLaji
-     * @param tVaiS (määrittelee, etsitäänkö tunnusta vai tietyn tunnuksen salasanaa)
-     * @return merkkijono, joka kertoo, onnistuiko haku tai miksi ei onnistunut
-     */
-//    public String searchTwo(String tiedosto, String tunnusSekvenssi, String salasanaLaji, int tVaiS) {
-//        try {
-//            ArrayList<String>haettavat = new ArrayList<>();
-//            ArrayList<String>parilliset = new ArrayList<>();
-//            ArrayList<String>parittomat = new ArrayList<>();
-//            FileReader reader = new FileReader(tiedosto);
-//            BufferedReader bufferedReader = new BufferedReader(reader); 
-//            String line;
-//            while ((line = bufferedReader.readLine()) != null) {
-//                haettavat.addAll(Arrays.asList(line.split(":")));
-//            }
-//            int i = 0;
-//            while (i < haettavat.size()) {
-//                if (i % 2 != 0) {
-//                    parittomat.add(haettavat.get(i));
-//                } else {
-//                    parilliset.add(haettavat.get(i));
-//                }
-//                i++;
-//            }
-//            if (tVaiS == 1) {
-//                if (searchOne(tiedosto, tunnusSekvenssi, tVaiS).equals(tunnusSekvenssi)) {
-//                    int pwIndex = parilliset.indexOf(tunnusSekvenssi);
-//                    if (parittomat.get(pwIndex).equals(salasanaLaji)) {
-//                        return "Kirjautuminen onnistui";
-//                    }
-//                    return "Salasana väärin";
-//                }
-//                return "Käyttäjätunnusta ei löytynyt";
-//            }
-//            else if (tVaiS == 2) {
-//                if (searchOne(tiedosto, salasanaLaji, tVaiS).equals(salasanaLaji)) {
-//                    int pwIndex = parittomat.indexOf(salasanaLaji);
-//                    if (tunnusSekvenssi.contains(parilliset.get(pwIndex))) {
-//                        return "jotain";
-//                    } 
-//                }
-//            }
-//                for (String k: line.split(":")) { 
-//                    if (tVaiS==1) {
-//                        if (searchOne(tiedosto, tunnusSekvenssi, tVaiS).equals(tunnusSekvenssi)) {
-//
-//                        }
-//                    }
-//                    if (s.equals(tunnusSekvenssi)) {
-//                        if (tVaiS == 1) {
-//                            reader.close();
-//                            return "Löytyi"; // käyttäjä tai sekvenssi löytyi tietokannasta
-//                        } else if (tVaiS == 2) {
-//                            tunnusOikein = true;
-//                        }                        
-//                    } else if (s.equals(salasanaLaji) && tunnusOikein == true && tVaiS == 2) {
-//                            reader.close();
-//                            return "Kirjautuminen onnistui";
-//                    } else if (!s.equals(salasanaLaji) && tunnusOikein == true && tVaiS == 2) {
-//                        return "Salasana väärin"; //käyttäjä löytyi mutta salasana väärin
-//                    }                    
-//                }
-//            
-//            reader.close();
-//          
-//        } catch (IOException e) {
-//
-//        }
-//        return "Haku ei toiminut";
-//    }
-//    public String searchOne(String tiedosto, String haettava, int tunnusVaiSekvenssi) {
-//        try {
-//            ArrayList<String>haettavat = new ArrayList<>();
-//            ArrayList<String>parilliset = new ArrayList<>();
-//            List<String>parittomat = new ArrayList<>();
-//            FileReader reader = new FileReader(tiedosto);
-//            BufferedReader bufferedReader = new BufferedReader(reader); 
-//            String line;
-//            while ((line = bufferedReader.readLine()) != null) { 
-//                haettavat.addAll(Arrays.asList(line.split(":")));
-//            }
-//            int i = 0;
-//            while (i < haettavat.size()) {
-//                if (i % 2 != 0) {
-//                    parittomat.add(haettavat.get(i));
-//                } else {
-//                    parilliset.add(haettavat.get(i));
-//                }
-//                i++;
-//            }
-//            if (tunnusVaiSekvenssi == 1) { //haetaan käyttäjätunnusta
-//                for (String s : parilliset) {
-//                    if (s.equals(haettava)) {
-//                        reader.close();
-//                        return haettava; //tunnus on olemassa
-//                    }
-//                }
-//                reader.close();
-//                return ""; //tunnusta ei ole
-//            } else if (tunnusVaiSekvenssi == 2) { //haetaan lajia
-//                for (String s : parittomat) {
-//                    if (s.equals(haettava)) {
-//                        reader.close();
-//                        return haettava; //laji löytyy
-//                    }
-//                }
-//                reader.close();
-//                return "";
-//            }
-//            
-//        }catch (IOException e) {
-//            
-//        }
-//        return "";
-//    }
 //    public void editDb(String file) {
 //
 //        FileInputStream fs = null;

@@ -1,5 +1,6 @@
-himmi:123456
-tutkija:kokeillaan
-adeniini:sytosiini
-kayttaja:salasana:
-heipodei:123456:
+tutkija:123456:
+testi3:salasana:
+testi4:salasana:
+testi2:seitseman:
+testi6:salasana:
+testi5:onkoOikein:
