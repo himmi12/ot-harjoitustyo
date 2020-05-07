@@ -45,7 +45,7 @@ public class BiotietokantaSovellus extends Application {
         bioDb.fromDbToUser();
         this.pw = "";
         
-        //public view
+
         TextArea sequence = new TextArea();        
         Button signIn = new Button("Sign in");
         Button signUp = new Button("Sign up");
@@ -66,7 +66,7 @@ public class BiotietokantaSovellus extends Application {
         pubLayout.getChildren().addAll(pubView);
         pubLayout.setBackground(bg);
         
-        //Sign up -view
+
         
         TextField username = new TextField();
         username.setMaxWidth(150);
@@ -87,14 +87,13 @@ public class BiotietokantaSovellus extends Application {
         changeTheView.setSpacing(10);
         changeTheView.getChildren().addAll(accountExists, toSigningIn);
         
-        VBox signingUp = new VBox();
-        
+        VBox signingUp = new VBox();        
         signingUp.setSpacing(10);
         signingUp.getChildren().addAll(user, username, passw, password, create, info, changeTheView);
         
         signingUp.setBackground(bg);
         
-        // sign in -view
+
         
         TextField u = new TextField();
         u.setMaxWidth(150);
@@ -116,7 +115,7 @@ public class BiotietokantaSovellus extends Application {
         
         signingIn.setBackground(bg);
         
-        // private view
+
         
         TextArea seq = new TextArea();
         Button logout = new Button("Log out");
@@ -150,47 +149,51 @@ public class BiotietokantaSovellus extends Application {
         
         priLayout.setBackground(bg);
         
+        
         Scene pub = new Scene(pubLayout, 1000, 600);
         Scene newAccount = new Scene(signingUp, 1000, 600);
         Scene account = new Scene(signingIn, 1000, 600);
         Scene priv = new Scene(priLayout, 1000, 600);
         
+        
         signUp.setOnAction((event) -> {
             sequence.setText("");
+            list.setText("");
             window.setScene(newAccount);
         });
         signIn.setOnAction((event) -> {
             sequence.setText("");
+            list.setText("");
             window.setScene(account);
         });
 
         toPrivateView.setOnAction((event)-> {
-            this.un = u.getText();
+            this.un = u.getText().trim();
             this.pw = p.getText();            
-            int reply=bioDb.kirjauduSisaan(this.un, this.pw);
-            if (reply==1) {
+            int reply = bioDb.kirjauduSisaan(this.un, this.pw);
+            if (reply == 1) {
                 u.setText("");
                 p.setText("");
                 window.setScene(priv);
             }
-            else if (reply==0) {
+            else if (reply == 0) {
                 msg.setText("Incorrect password");
             } 
-            else if (reply==-1) {
+            else if (reply == -1) {
                 msg.setText("Incorrect username");
             }
         });
         create.setOnAction((event) -> {
-            this.un=username.getText();
-            this.pw=password.getText();            
-            int reply=bioDb.luoTunnus(this.un, this.pw);
-            if (reply==1) {
+            this.un = username.getText().trim();
+            this.pw = password.getText(); 
+            int reply = bioDb.luoTunnus(this.un, this.pw);
+            if (reply == 1) {
                 username.setText("");
                 password.setText("");
                 window.setScene(priv);
-            } else if (reply==-1) {
+            } else if (reply == -1) {
                 info.setText("Password is too short.");
-            } else if (reply==0) {
+            } else if (reply == 0) {
                 info.setText("Username is already taken.");
             }
         });
@@ -201,57 +204,61 @@ public class BiotietokantaSovellus extends Application {
             window.setScene(pub);
         });
         logout.setOnAction((event) -> {
+            result.setText("");
+            message.setText("");
             seq.setText("");
             window.setScene(pub);
         });
         addButton.setOnAction((event) -> {
-            this.sequence=addSeq.getText();
-            this.species=addName.getText();
+            this.sequence = addSeq.getText().trim();
+            this.species = addName.getText().trim();
             
-            int reply=bioDb.add(this.sequence, this.species);
-            if (reply==1) {
+            int reply = bioDb.add(this.sequence, this.species);
+            if (reply == 1) {
                 message.setText("Succeeded");
                 addSeq.setText("");
                 addName.setText("");
             }
-            else if (reply==-1) {
+            else if (reply == -1) {
                 message.setText(this.species+" exists in genome browser");
             }
-            else if (reply==0) {
+            else if (reply == 0) {
                 message.setText("Could not add the sequence. Only A,T,C,G accepted.");
+            }
+            else if (reply == -2) {
+                message.setText("Add the binomial name of the species. For instance Homo sapiens");
             }
         });
         search.setOnAction((event) -> {
-            String seqData = seq.getText();
+            String seqData = seq.getText().trim();
             List results = bioDb.search(seqData);
             
             if (results.isEmpty()) {
                 result.setText("No matching results found.");
             }
             else {
-                String species="";
+                String species = "";
                 for (Object s: results) {
-                    species=species+"\n"+s;
+                    species = species + "\n" + s;
                 }
                 result.setText(species);
             }
         });
         srch.setOnAction((event) -> {
-            String seqData = sequence.getText();
+            String seqData = sequence.getText().trim();
             List results = bioDb.search(seqData);
             
             if (results.isEmpty()) {
                 list.setText("No matching results found.");
             }
             else {
-                String species="";
+                String species = "";
                 for (Object s: results) {
-                    species=species+"\n"+s;
+                    species = species + "\n" + s;
                 }
                 list.setText(species);
             }
-        });
-        
+        });        
         window.setScene(pub);
         window.show();
     }

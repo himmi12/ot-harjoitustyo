@@ -31,8 +31,7 @@ public class Biotietokanta {
     public int luoTunnus(String tunnus, String salasana) {
         if (salasana.length() < 6) {
             return -1; // salasana liian lyhyt            
-        }
-        if (!this.kayttajat.isEmpty()) {            
+        } if (!this.kayttajat.isEmpty()) {            
             for (Kayttaja k: kayttajat) {
                 if (k.getTunnus().equals(tunnus)) { //tunnus on jo käytössä
                     return 0;
@@ -50,10 +49,10 @@ public class Biotietokanta {
         }
     }
     /**
-     * Tarkistetaan, onko tunnus tietokannassa ja vastaako syötteen salasana tietokannan salasanaa.
+     * Kirajudutaan sisään tarkistaen, onko tunnus tietokannassa ja vastaako syötteen salasana tietokannan salasanaa.
      * @param tunnus
      * @param salasana
-     * @return -2,-1,0 tai 1 Riippuen siitä, mikä kirjautumisessa on epäonnistunut vai onko kirjautuminen 
+     * @return -1,0 tai 1 Riippuen siitä, mikä kirjautumisessa on epäonnistunut vai onko kirjautuminen 
      * onnistunut
      */
     
@@ -61,19 +60,19 @@ public class Biotietokanta {
         for (Kayttaja k : kayttajat) {
             if (k.getTunnus().equals(tunnus)) {
                 if (k.getSalasana().equals(salasana)) {
-                    return 1; //onnistuu
+                    return 1;
                 } else {
-                    return 0; //salasana väärin
+                    return 0;
                 }                
             }
         }
-        return -1; //käyttäjätunnusta ei ole   
+        return -1;  
     }
     /**
-     * Lisätään sekvenssi ja lajin nimi tietokantaan (toistaiseksi vielä listaan), jos kriteerit täyttyvät.
+     * Lisätään sekvenssi ja lajin nimi tietokantaan sekä työmuistina käytettävään listaan, jos kriteerit täyttyvät.
      * @param sekvenssi
      * @param nimi
-     * @return -1,0 tai 1 riippuen siitä, mikä on mennyt pieleen vai onko lisääminen onnistunut
+     * @return -2,-1,0 tai 1 riippuen siitä, mikä on mennyt pieleen vai onko lisääminen onnistunut
      */
 
     public int add(String sekvenssi, String nimi) {
@@ -83,11 +82,11 @@ public class Biotietokanta {
             } else {
                 return 0;
             }
-        } 
-
-        if (!this.lajit.isEmpty()) {            
+        } if (!nimi.contains(" ")) {
+            return -2;
+        } if (!this.lajit.isEmpty()) {            
             for (Laji laji : this.lajit) {
-                if (laji.getLaji().equals(nimi)) { //laji on jo listassa
+                if (laji.getLaji().equals(nimi)) {
                     return -1;
                 }                
             }
@@ -103,8 +102,7 @@ public class Biotietokanta {
         }
     }
     /**
-     * Haetaan lajin nimi tietokannasta sen perusteella sisältääkö tietokannan sekvenssi haettavan sekvenssin.
-     * (Toistaiseksi toteutettu listana.)
+     * Haetaan lajin nimi työmuistista sen perusteella sisältääkö listan sekvenssi haettavan sekvenssin.
      * @param sekvenssi
      * @return lista, sopivista lajien nimistä
      */
@@ -118,10 +116,13 @@ public class Biotietokanta {
         }
         return matches;        
     }
+    /** 
+     * Luetaan sekvenssit.txt -tiedostosta työmuistiin eli this.lajit-listaan lajien nimet ja DNA-sekvenssit. 
+     */
     public void fromDbToSeq() {
         try {
-            ArrayList<String>species = new ArrayList<>();
-            ArrayList<String>seq = new ArrayList<>();
+            ArrayList<String> species = new ArrayList<>();
+            ArrayList<String> seq = new ArrayList<>();
             FileReader reader = new FileReader("sekvenssit.txt");
             BufferedReader bufferedReader = new BufferedReader(reader); 
             String line;
@@ -130,7 +131,7 @@ public class Biotietokanta {
                 for (String s: line.split("")) {
                     if (s.equals(":")) {
                         if (adding.contains(" ")) {
-                            species.add(adding); //laji ja sekvenssi ovat eri taulukoissa mutta samassa indeksissä
+                            species.add(adding);
                             adding = "";
                         } else {
                             seq.add(adding);
@@ -155,6 +156,10 @@ public class Biotietokanta {
         } catch (IOException e) {
         }
     }
+    /**
+     * Luetaan kayttajat.txt -tiedostosta työmuistiin eli this.kayttajat-listaan käyttäjätunnukset
+     * ja niihin liittyvät salasanat.
+     */
     public void fromDbToUser() {
         try {
             ArrayList<String>haettavat = new ArrayList<>();
@@ -193,6 +198,7 @@ public class Biotietokanta {
     /**
      * Lisätään valittuun tekstitiedostoon joko käyttäjätunnus ja salasana tai DNA-sekvenssi ja laji.
      * Tiedostoksi voi valita joko kayttajat tai sekvenssit -tiedoston
+     * Kaksoispisteet erottavat tunnuksen ja salasanan sekä sekvenssidatan ja lajin nimen toisistaan.
      * @param tiedosto
      * @param dataKayttajatunnus
      * @param lajiSalasana 
@@ -208,33 +214,4 @@ public class Biotietokanta {
 
         }
     }
-//    public void editDb(String file) {
-//
-//        FileInputStream fs = null;
-//        InputStreamReader in = null;
-//        BufferedReader br = null;
-//
-//        StringBuffer sb = new StringBuffer();
-//
-//        String textinLine;
-//        try {
-//            fs = new FileInputStream(file);
-//            in = new InputStreamReader(fs);
-//            br = new BufferedReader(in);
-//
-//            while (true) {
-//                textinLine = br.readLine();
-//                if (textinLine == null) {
-//                    break;
-//                }
-//                sb.append(textinLine);
-//            }
-//            String textToEdit = br.readLine();
-//            sb.replace(textToEdit, "");
-//            
-//        } catch (Exception e) {
-//
-//        }
-//    }
-
 }

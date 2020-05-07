@@ -23,59 +23,65 @@ public class BiotietokantaTest {
     @Before
     public void setUp() {
         biotietokanta = new Biotietokanta();
-//        biotietokanta.editDb("kayttajat.txt");
     }
     @Test
     public void tietokantaOnOlemassa() {
-        assertTrue(biotietokanta!=null);
+        assertTrue(biotietokanta != null);
     }
     
     @Test
     public void salasanaOnVahintaanKuusiMerkkia() {
-        assertTrue(biotietokanta.luoTunnus("testi1", "viisi")==-1);
-        assertTrue(biotietokanta.luoTunnus("testi2", "seitseman")==1);
+        assertTrue(biotietokanta.luoTunnus("testi1", "viisi") == -1);
+        assertTrue(biotietokanta.luoTunnus("testi2", "seitseman") == 1);
     }
     @Test
     public void kayttajatunnusOnUniikki() {
         biotietokanta.luoTunnus("testi3", "salasana");
-        assertTrue(biotietokanta.luoTunnus("testi3", "salasana")==0);
-        assertTrue(biotietokanta.luoTunnus("testi4", "salasana")==1);
+        assertTrue(biotietokanta.luoTunnus("testi3", "salasana") == 0);
+        assertTrue(biotietokanta.luoTunnus("testi4", "salasana") == 1);
     }
     @Test
     public void salasanaOnOikein() {
         biotietokanta.luoTunnus("testi5", "onkoOikein");
-        assertTrue(biotietokanta.kirjauduSisaan("testi5", "EiOleOikein")==0);
-        assertTrue(biotietokanta.kirjauduSisaan("testi5", "onkoOikein")==1);
+        assertTrue(biotietokanta.kirjauduSisaan("testi5", "EiOleOikein") == 0);
+        assertTrue(biotietokanta.kirjauduSisaan("testi5", "onkoOikein") == 1);
     }
     @Test
     public void kayttajatunnusOnOlemassa() {
         biotietokanta.luoTunnus("testi6", "salasana");
-        assertTrue(biotietokanta.kirjauduSisaan("testi6", "salasana")==1);
-        assertTrue(biotietokanta.kirjauduSisaan("vaaraTunnus", "vaaraSalasana")==-1);
+        assertTrue(biotietokanta.kirjauduSisaan("testi6", "salasana") == 1);
+        assertTrue(biotietokanta.kirjauduSisaan("vaaraTunnus", "vaaraSalasana") == -1);
+    }
+    @Test public void trimmausToimii() {
     }
     @Test
     public void lisattavaSekvenssiAito() {
-        assertTrue(biotietokanta.add("atcg", "Testi")==1);
-        assertTrue(biotietokanta.add("atcb", "Virhe")==0);
+        assertTrue(biotietokanta.add("atcg", "Testi testi") == 1);
+        assertTrue(biotietokanta.add("atcb", "Virhe virhe") == 0);
     }
     @Test
     public void lajinLisaaminenToimii() {
-        biotietokanta.add("attt", "Laji1");
-        assertTrue(biotietokanta.add("atcg", "Laji2")==1);
-        assertTrue(biotietokanta.add("attt", "Laji1")==-1);
+        biotietokanta.add("attt", "Laji 1");
+        assertTrue(biotietokanta.add("atcg", "Laji 2") == 1);
+        assertTrue(biotietokanta.add("attt", "Laji 1") == -1);
+    }
+    @Test
+    public void lajinNimiOnOikein() {
+        assertTrue(biotietokanta.add("tatatatatata", "Laji3") == -2);
+        assertTrue(biotietokanta.add("atttatttattta", " Laji 3 ") == 1);
     }
     @Test
     public void lajinHakeminenToimii() {
-        biotietokanta.add("aaaatttt", "Laji3");
-        biotietokanta.add("ccaattgg", "Laji4");
+        biotietokanta.add("aaaatttt", "Laji 4");
+        biotietokanta.add("ccaattgg", "Laji 5");
         
         List lajit = biotietokanta.search("aatt");
         String vastaus = "";
         
         for (Object s: lajit) {
-            vastaus=vastaus+" "+s;
+            vastaus = vastaus + " " + s;
             
         }       
-        assertTrue(vastaus.equals(""+" "+"Laji3"+" "+"Laji4"));
+        assertTrue(vastaus.equals("" + " " + "Laji 4" + " " + "Laji 5"));
     }
 }
