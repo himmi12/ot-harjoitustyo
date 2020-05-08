@@ -76,5 +76,5 @@ Hioin sekä laji ja sekvenssidatan että käyttäjätietojen tallennuksia omiin 
 ### 05.05. 4h
 Sain tiedon tallennuksen ja haun toimimimaan siten, että sovellus käyttää työmuistia, jonne siirretään käynnistettäessä tekstitiedostoissa tallessa olleet tiedot. Sovellusta käytettäessä tekstitiedostoja ei lueta mutta työmuistia päivitetään sekä tekstitiedostoihin lisätään dataa. 
 
-### 06.06. 6h
+### 07.05. 5,5h
 Hioin sovelluksen ulkoasua kuntoon. Tarkistin, että sovellus toimii virheellisilläkin syötteillä. Viimeistelin testausta.
