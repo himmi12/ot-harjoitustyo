@@ -42,7 +42,7 @@ public class BiotietokantaSovellus extends Application {
         Button srch = new Button("Search");
         Label list = new Label("");
         list.setTextFill(Color.WHITE);
-        Label intro = new Label("Enter a FASTA sequence");
+        Label intro = new Label("Enter a DNA-sequence");
         intro.setTextFill(Color.WHITE);
         Image image = new Image("file:fluorisoiva.png");
         BackgroundImage bimage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
@@ -126,7 +126,7 @@ public class BiotietokantaSovellus extends Application {
         message.setTextFill(Color.WHITE);
         
         VBox add = new VBox();
-        Label addS = new Label("Add a FASTA sequence");
+        Label addS = new Label("Add a DNA-sequence");
         addS.setTextFill(Color.WHITE);
         Label addSN = new Label("Add the scientific name of the species");
         addSN.setTextFill(Color.WHITE);
