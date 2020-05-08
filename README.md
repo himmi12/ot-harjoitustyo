@@ -32,6 +32,6 @@ Komennolla: mvn package
 ### JavaDoc:n generointi
 Komennolla: mvn javadoc:javadoc
 
-### Checkstyle.xml -tiedoston määrittelemät tarkistukset
+### Checkstyle
 Komennolla: mvn jxr:jxr checkstyle:checkstyle
 
