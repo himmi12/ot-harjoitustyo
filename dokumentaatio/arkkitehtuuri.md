@@ -24,14 +24,42 @@ Biotietokanta-luokan metodit:
 * fromDbToUser(String tiedosto);
 * addToDb(String tiedosto, String dataKayttajatunnus, String lajiSalasana)
 
-Kaikki sovelluksen pysyväismuistissa eli tiedostoissa sekvenssit.txt ja kayttajat.txt siirretään kutsumalla metodeja fromDbToUser ja fromDbToSeq heti sovelluksen käynnistyttyä. Tämän jälkeen sovellusta käytettäessä tiedot haetaan vain käyttömuistista eli listoista mutta lisätään myös tekstitiedostoihin. Näin ollen, kun sovellus käynnistyy uudestaan, oikeat tiedot ovat tallessa.
+Biotietokannan suhde ohjelman muihin luokkiin ja tiedon pysyväistallennukseen nähden.
 
-### Luokkakaavio
+### Tiedon pysyväistallennus
 
-![kuva](/dokumentaatio/kuvat/Screenshot%20(23).png)
+Tiedon pysyväistallennus tapahtuu Biotietokanta-luokan metodin addToDb avulla. Metodia kutsutaan Biotietokanta luokan metodeissa luoTunnus, kun soveltuva käyttäjätunnus luodaan, sekä metodissa add, jossa käyttäjä lisää uuden lajin ja lajin nimeä vastaavan DNA-sekvenssin. Kaikki sovelluksen pysyväismuistissa eli tiedostoissa sekvenssit.txt ja kayttajat.txt siirretään kutsumalla metodeja fromDbToUser ja fromDbToSeq heti sovelluksen käynnistyttyä. Tämän jälkeen sovellusta käytettäessä tiedot haetaan vain käyttömuistista eli listoista mutta lisätään myös tekstitiedostoihin. Näin ollen, kun sovellus käynnistyy uudestaan, oikeat tiedot ovat tallessa.
 
-### Sekvenssikaaviot
+### Tiedostot
+
+* sekvenssit.txt
+* kayttajat.txt
+* testausta varten seqFake.txt (vastaa lajitietojen tallennuksesta testeissä)
+* testausta varten usersFake.txt (vastaa käyttäjätietojen tallennuksesta testeissä)
+
+Tiedot tallennetaan muodossa:
+
+atgtgggt:Lajin nimi:
+* Siis validi sekvenssidata pieninä kirjaimina erotettuna kaksoispisteellä lajin nimestä, minkä jälkeen on uudelleen kaksoispiste
+kayttajatunnus:salasana:
+* Siis käyttäjätunnus erotettuna kaksoispisteellä salasanasta, minkä jälkeen uudelleen kaksoispiste
+
+### Päätoiminnallisuudet
 
 #### Käyttäjätunnuksen luominen
 
 ![kuva](/dokumentaatio/kuvat/Screenshot%20(24).png)
+
+#### Sisäänkirjautuminen
+
+#### Lajitietojen lisääminen
+
+#### Lajin nimen hakeminen
+
+### Muut toiminnallisuudet
+
+## Ohjelman rakenteelliset heikkoudet
+
+Tiedon tallennus.
+
+Muuttujat.
