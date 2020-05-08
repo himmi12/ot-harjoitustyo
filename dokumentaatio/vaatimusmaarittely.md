@@ -1,39 +1,45 @@
-SOVELLUKSEN TARKOITUS
+# Vaatimusmäärittely
+
+## Sovelluksen tarkoitus
 
 Toteutetaan yksinkertaistettu genomiselain, jonka avulla voi etsiä, mistä lajista tuntematon DNA-sekvenssi on peräisin.
 Sovellusta voi käyttää kirjautuneena tai kirjautumatta. Tiedonhaku on mahdollista toteuttaa kirjautumatta sovellukseen. Lajien genomien
-lataaminen tietokantaan edellyttää tunnuksen tekemistä ja sisään kirjautumista. Tällöin voi mahdollisesti myös nimetä pätkiä genomeista 
-tietyiksi geeneiksi. Koska todellisuudessa useiden lajien genomien koko on miljardien emäksien suuruusluokassa, tässä työssä ei ladata 
-tietokantaan oikeita genomeita.
+lataaminen tietokantaan edellyttää tunnuksen tekemistä ja sisään kirjautumista. Koska todellisuudessa useiden lajien genomien koko on miljardien emäksien suuruusluokassa, tässä työssä ei ladata tietokantaan oikeita genomeita vaan pieniä osia niistä.
 
-KÄYTTÄJÄT
+## Käyttäjät
 
-* Peruskäyttäjä: Voi hakea tietokannasta tietoa vertaamalla omaa DNA-sekvenssiään tietokannan sekvensseihin siten, että käyttäjälle
-palautetaan laji, josta kyseinen sekvenssi on peräisin. On mahdollista, että sovellusta kehitetään siten, että käyttäjälle palautetaan
-lajit, jotka parhaiten vastaavat käyttäjän DNA-sekvenssiä. Tällöin käyttäjän sekvenssin ei tarvitse täysin sisältyä palautettaviin
-sekvensseihin.
- * Erikoiskäyttäjä: Peruskäyttäjän toiminnallisuudet sisältyvät. Lisäksi erikoiskäyttäjän on mahdollista ladata ja nimetä DNA-sekevnssejä
-tietokantaan. On myös mahdollista, että sovellusta kehitetään siten, että erikoiskäyttäjä voi lisätä geenejä tietokantaan.
+### Peruskäyttäjä: 
 
-SUUNNITELTU TOIMINNALLISUUS
+Voi hakea tietokannasta tietoa vertaamalla tuntematonta DNA-sekvenssiä tietokannan sekvensseihin siten, että käyttäjälle
+palautetaan lista lajeista, joista kyseinen sekvenssin pätkä on peräisin.
 
-* kirjautumatta: 
-  * käyttäjä voi luoda järjestelmään käyttäjätunnuksen ja salasanan (TEHTY)
-    * Käyttäjätunnuksen tulee olla uniikki ja salasanan vähintään 6 merkkiä pitkä (TEHTY)
-  * käyttäjä voi kirjautua järjestelmään (syötetään käyttäjätunnus ja salasana) (TEHTY)
-    * Järjestelmä ilmoittaa, jos käyttäjää ei ole luotu (TEHTY)
+### Erikoiskäyttäjä: 
+
+Peruskäyttäjän toiminnallisuudet sisältyvät. Lisäksi erikoiskäyttäjän on mahdollista ladata ja nimetä DNA-sekevnssejä
+tietokantaan.
+
+## Toiminnallisuus
+
+### Kirjautumatta: 
+
+  * käyttäjä voi luoda järjestelmään käyttäjätunnuksen ja salasanan
+    * Käyttäjätunnuksen tulee olla uniikki ja salasanan vähintään 6 merkkiä pitkä
+  * käyttäjä voi kirjautua järjestelmään (syötetään käyttäjätunnus ja salasana)
+    * Ilmoitetaan, jos käyttäjää ei ole luotu
+				* Ilmoitetaan, jos salasana väärin
   * käyttäjä voi liittää tekstikenttään DNA-sekvenssin pätkän ja hakea, mistä lajista tai lajeista sekvenssi on peräisin. Jos käyttäjän
-  sekvenssi ei vastaa mitään lajia, käyttäjälle kerrotaan tästä (TEHTY)
+  sekvenssi ei vastaa mitään lajia, käyttäjälle kerrotaan tästä
   
-* kirjautuneena:
-  * käyttäjä voi liittää tekstikenttään DNA-sekvenssin pätkän ja hakea, mistä lajista sekvenssi on peräisin (TEHTY)
-  * käyttäjä voi luoda järjestelmään uuden DNA-sekvenssin (TEHTY)
-    * Järjestelmä tarkastaa, että sekvenssi sisältää vain kirjaimia a,t,c ja g (TEHTY)
+### Kirjautuneena:
+
+  * käyttäjä voi liittää tekstikenttään DNA-sekvenssin pätkän ja hakea, mistä lajista sekvenssi on peräisin
+  * käyttäjä voi luoda järjestelmään uuden DNA-sekvenssin
+    * Järjestelmä tarkastaa, että sekvenssi sisältää vain kirjaimia a,t,c ja g
     * Luotu sekvenssi tulee nimetä jonkin lajin mukaan
-      * Järjestelmä tarkastaa, että lajia ei ole vielä tietokannassa (TEHTY)
-  * käyttäjä voi kirjautua ulos (TEHTY)
+				   * Järjestelmä tarkastaa, että lajia ei ole vielä lisätty tietokantaan
+  * käyttäjä voi kirjautua ulos
   
-* Jatkokehitysideoita:
+## Jatkokehitysideoita:
 
   * Toiminnallisuus, jonka avulla haun tuloksena voi saada muitakin kuin täysin haettua sekvenssiä vastaavan lajin. Järjestelmä siis 
   näyttää käyttäjälle myös lajeja, jotka vastasivat suurimmaksi osaksi oikeaa
