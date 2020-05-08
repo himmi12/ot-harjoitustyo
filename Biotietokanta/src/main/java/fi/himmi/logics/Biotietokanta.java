@@ -27,13 +27,16 @@ public class Biotietokanta {
      * Luodaan käyttäjätunnus, jos luotava tunnus täyttää tunnuksen luomisen kriteerit.
      * @param tunnus
      * @param salasana
-     * @return -1, 0 tai 1 
+     * @return -2, -1, 0 tai 1 
      */
     
     public int luoTunnus(String tunnus, String salasana) {
         if (salasana.length() < 6) {
             return -1;            
-        } 
+        }
+        if (tunnus.isEmpty()) {
+            return -2;
+        }
         if (this.kayttajat.isEmpty()) {            
             Kayttaja k = new Kayttaja(tunnus, salasana);
             this.kayttajat.add(k);
@@ -84,25 +87,26 @@ public class Biotietokanta {
             if (!s.equals("a") && !s.equals("t") && !s.equals("c") && !s.equals("g") && !s.equals("\n")) {
                 return 0;
             }
-        } if (!nimi.contains(" ")) {
-            return -2;
-        } 
-        if (this.lajit.isEmpty()) {                        
-            Laji l = new Laji(sekvenssi, nimi);
-            this.lajit.add(l);
-            addToDb(this.speciesFile, sekvenssi, nimi);
-            return 1;           
-        } else {
-            for (Laji laji : this.lajit) {
-                if (laji.getLaji().equals(nimi)) {
-                    return -1;
-                }                
-            }
-            Laji l = new Laji(sekvenssi, nimi);
-            this.lajit.add(l);
-            addToDb(this.speciesFile, sekvenssi, nimi);
-            return 1;
         }
+        if (nimi.contains(" ")) {
+            if (this.lajit.isEmpty()) {
+                Laji l = new Laji(sekvenssi, nimi);
+                this.lajit.add(l);
+                addToDb(this.speciesFile, sekvenssi, nimi);
+                return 1;
+            } else {
+                for (Laji laji : this.lajit) {
+                    if (laji.getLaji().equals(nimi)) {
+                        return -1;
+                    }
+                }
+                Laji l = new Laji(sekvenssi, nimi);
+                this.lajit.add(l);
+                addToDb(this.speciesFile, sekvenssi, nimi);
+                return 1;
+            }
+        }       
+        return -2;
     }
     /**
      * Haetaan lajin nimi työmuistista sen perusteella sisältääkö listan sekvenssi haettavan sekvenssin.
@@ -111,6 +115,9 @@ public class Biotietokanta {
      */
     public List search(String sekvenssi) {
         List<String> matches = new ArrayList<>();
+        if (sekvenssi.isEmpty()) {
+            return matches;
+        }
         sekvenssi = sekvenssi.toLowerCase(); 
         for (Laji laji: this.lajit) {
             if (laji.getData().contains(sekvenssi)) {

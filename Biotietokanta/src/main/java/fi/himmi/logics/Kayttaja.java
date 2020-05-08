@@ -19,14 +19,8 @@ public class Kayttaja {
         this.tunnus = tunnus;
         this.salasana = salasana;
     }
-    public void setTunnus(String tunnus) {
-        this.tunnus = tunnus;
-    }
     public String getTunnus() {
         return this.tunnus;
-    }
-    public void setSalasana(String salasana) {
-        this.salasana = salasana;
     }
     public String getSalasana() {
         return this.salasana;

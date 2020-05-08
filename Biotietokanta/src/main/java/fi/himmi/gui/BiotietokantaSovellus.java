@@ -42,7 +42,7 @@ public class BiotietokantaSovellus extends Application {
         Button srch = new Button("Search");
         Label list = new Label("");
         list.setTextFill(Color.WHITE);
-        Label intro = new Label("Enter a DNA-sequence");
+        Label intro = new Label("Enter a DNA sequence");
         intro.setTextFill(Color.WHITE);
         Image image = new Image("file:fluorisoiva.png");
         BackgroundImage bimage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
@@ -112,7 +112,7 @@ public class BiotietokantaSovellus extends Application {
         Button search = new Button("Search");
         Label result = new Label("");
         result.setTextFill(Color.WHITE);
-        Label enter = new Label("Enter a FASTA sequence");
+        Label enter = new Label("Enter a DNA sequence");
         enter.setTextFill(Color.WHITE);
         
         VBox searchArea = new VBox();
@@ -126,7 +126,7 @@ public class BiotietokantaSovellus extends Application {
         message.setTextFill(Color.WHITE);
         
         VBox add = new VBox();
-        Label addS = new Label("Add a DNA-sequence");
+        Label addS = new Label("Add a DNA sequence");
         addS.setTextFill(Color.WHITE);
         Label addSN = new Label("Add the scientific name of the species");
         addSN.setTextFill(Color.WHITE);
@@ -185,6 +185,8 @@ public class BiotietokantaSovellus extends Application {
                 info.setText("Password is too short.");
             } else if (reply == 0) {
                 info.setText("Username is already taken.");
+            } else if (reply == -2) {
+                info.setText("Username cannot be empty.");
             }
         });
         toSigningIn.setOnAction((event) -> {

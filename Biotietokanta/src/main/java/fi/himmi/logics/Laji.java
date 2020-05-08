@@ -24,10 +24,4 @@ public class Laji {
     public String getData() {
         return this.sekvenssi;
     }
-    public void setLaji(String nimi) {
-        this.lajinNimi = nimi;
-    }
-    public void setData(String sekvenssi) {
-        this.sekvenssi = sekvenssi;
-    }
 }

@@ -53,6 +53,10 @@ public class BiotietokantaTest {
         assertTrue(biotietokanta.kirjauduSisaan("vaaraTunnus", "vaaraSalasana") == -1);
     }
     @Test
+    public void kayttajatunnusEiOleTyhja() {
+        assertTrue(biotietokanta.luoTunnus("", "salasana") == -2);
+    }
+    @Test
     public void lisattavaSekvenssiAito() {
         assertTrue(biotietokanta.add("atcg", "Testi testi") == 1);
         assertTrue(biotietokanta.add("atcb", "Virhe virhe") == 0);
