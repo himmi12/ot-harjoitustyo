@@ -11,7 +11,7 @@ Sovellus on yksikertaistettu genomiselain, jonka avulla voi etsiä, mistä lajis
 
 [tyoaikakirjanpito](/dokumentaatio/tyoaikakirjanpito.md)
 
-testausdokumentti
+[testausdokumentti](/dokumentaatio/testaus.md)
 
 ## Releaset
 
