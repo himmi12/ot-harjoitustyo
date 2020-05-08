@@ -22,7 +22,7 @@ public class BiotietokantaTest {
     
     @Before
     public void setUp() {
-        biotietokanta = new Biotietokanta();
+        biotietokanta = new Biotietokanta("usersFake.txt", "seqFake.txt");
     }
     @Test
     public void tietokantaOnOlemassa() {

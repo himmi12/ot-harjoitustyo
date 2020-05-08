@@ -30,7 +30,7 @@ public class BiotietokantaSovellus extends Application {
     
     @Override
     public void start(Stage window) throws Exception {
-        Biotietokanta bioDb = new Biotietokanta();
+        Biotietokanta bioDb = new Biotietokanta("kayttajat.txt", "sekvenssit.txt");
         bioDb.fromDbToSeq();
         bioDb.fromDbToUser();
         this.pw = "";

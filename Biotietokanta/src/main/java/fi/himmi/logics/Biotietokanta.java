@@ -11,12 +11,14 @@ import java.util.Arrays;
 
 
 public class Biotietokanta {
-    
+    private String usersFile;
+    private String speciesFile;
     private List<Kayttaja> kayttajat;
     private List<Laji> lajit;
     
-    public Biotietokanta() {
-        
+    public Biotietokanta(String users, String species) {
+        this.usersFile = users;
+        this.speciesFile = species;
         this.kayttajat = new ArrayList<>();
         this.lajit = new ArrayList<>();
     }
@@ -35,7 +37,7 @@ public class Biotietokanta {
         if (this.kayttajat.isEmpty()) {            
             Kayttaja k = new Kayttaja(tunnus, salasana);
             this.kayttajat.add(k);
-            addToDb("kayttajat.txt", tunnus, salasana);
+            addToDb(this.usersFile, tunnus, salasana);
             return 1;           
         } else {
             for (Kayttaja k: kayttajat) {
@@ -45,7 +47,7 @@ public class Biotietokanta {
             }
             Kayttaja k = new Kayttaja(tunnus, salasana);
             this.kayttajat.add(k);
-            addToDb("kayttajat.txt", tunnus, salasana);
+            addToDb(this.usersFile, tunnus, salasana);
             return 1; 
         }
     }
@@ -88,7 +90,7 @@ public class Biotietokanta {
         if (this.lajit.isEmpty()) {                        
             Laji l = new Laji(sekvenssi, nimi);
             this.lajit.add(l);
-            addToDb("sekvenssit.txt", sekvenssi, nimi);
+            addToDb(this.speciesFile, sekvenssi, nimi);
             return 1;           
         } else {
             for (Laji laji : this.lajit) {
@@ -98,7 +100,7 @@ public class Biotietokanta {
             }
             Laji l = new Laji(sekvenssi, nimi);
             this.lajit.add(l);
-            addToDb("sekvenssit.txt", sekvenssi, nimi);
+            addToDb(this.speciesFile, sekvenssi, nimi);
             return 1;
         }
     }
@@ -125,7 +127,7 @@ public class Biotietokanta {
         try {
             ArrayList<String> species = new ArrayList<>();
             ArrayList<String> seq = new ArrayList<>();
-            FileReader reader = new FileReader("sekvenssit.txt");
+            FileReader reader = new FileReader(this.speciesFile);
             BufferedReader bufferedReader = new BufferedReader(reader); 
             String line;
             String adding = "";
@@ -171,7 +173,7 @@ public class Biotietokanta {
             ArrayList<String> haettavat = new ArrayList<>();
             ArrayList<String> parilliset = new ArrayList<>();
             ArrayList<String> parittomat = new ArrayList<>();
-            FileReader reader = new FileReader("kayttajat.txt");
+            FileReader reader = new FileReader(this.usersFile);
             BufferedReader bufferedReader = new BufferedReader(reader); 
             String line;
             while ((line = bufferedReader.readLine()) != null) {
