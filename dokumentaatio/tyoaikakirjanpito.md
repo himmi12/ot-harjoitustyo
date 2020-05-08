@@ -64,3 +64,17 @@ Toteutin uuden käyttjän luomisen ja sisään kirjautumisen siten, että tieto 
 
 ### 28.04. 2h
 Checkstylien korjaus. ALustavan käyttöohjeen kirjoittaminen. Javadocin käyttöönotto. Arkkitehtuurikuvauksen kirjoittaminen jäi tekemättä ajanpuutteen vuoksi.
+
+# VIIKKO7
+
+### 03.05. 1,5
+Yritin saada hakutoimintoa toimimaan sekä sekvenssitietojen että käyttäjätietojen osalta. Sovellus ei edennyt lainkaan.
+
+### 04.05. 5h
+Hioin sekä laji ja sekvenssidatan että käyttäjätietojen tallennuksia omiin tekstitiedostoihinsa siten, että metodeista ei tulisi liian pitkiä ja hankalasti ymmärrettäviä.
+
+### 05.05. 4h
+Sain tiedon tallennuksen ja haun toimimimaan siten, että sovellus käyttää työmuistia, jonne siirretään käynnistettäessä tekstitiedostoissa tallessa olleet tiedot. Sovellusta käytettäessä tekstitiedostoja ei lueta mutta työmuistia päivitetään sekä tekstitiedostoihin lisätään dataa. 
+
+### 06.06. 6h
+Hioin sovelluksen ulkoasua kuntoon. Tarkistin, että sovellus toimii virheellisilläkin syötteillä. Viimeistelin testausta.
