@@ -9,6 +9,7 @@ Olettaa, että käynnistyshakemistossa on tiedostot kayttajat.txt, sekvenssit.tx
 Komennolla: java -jar todoapp.jar
 
 ## Hakutoiminto
+![kuva1](/dokumentaatio/kuvat/PublicView.png)
 
 Liitetään textikenttään "Enter a DNA-sequence" -otsikon alle tuntemattoman lajin DNA-sekvenssiä. Painetaan search-nappia hakemisen aloittamiseksi. Hakutoiminto löytyy sekä kirjautumatta että kirjautuneena.
 
