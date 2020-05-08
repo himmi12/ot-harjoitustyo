@@ -81,4 +81,9 @@ public class BiotietokantaTest {
         }       
         assertTrue(vastaus.equals("" + " " + "Laji 4" + " " + "Laji 5"));
     }
+    @Test
+    public void tiedotSaadaanMuistiin() {
+        assertTrue(biotietokanta.fromDbToSeq());
+        assertTrue(biotietokanta.fromDbToUser());
+    }
 }

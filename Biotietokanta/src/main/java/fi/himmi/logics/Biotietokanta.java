@@ -30,22 +30,23 @@ public class Biotietokanta {
     
     public int luoTunnus(String tunnus, String salasana) {
         if (salasana.length() < 6) {
-            return -1; // salasana liian lyhyt            
-        } if (!this.kayttajat.isEmpty()) {            
+            return -1;            
+        } 
+        if (this.kayttajat.isEmpty()) {            
+            Kayttaja k = new Kayttaja(tunnus, salasana);
+            this.kayttajat.add(k);
+            addToDb("kayttajat.txt", tunnus, salasana);
+            return 1;           
+        } else {
             for (Kayttaja k: kayttajat) {
-                if (k.getTunnus().equals(tunnus)) { //tunnus on jo käytössä
+                if (k.getTunnus().equals(tunnus)) {
                     return 0;
                 }                
             }
             Kayttaja k = new Kayttaja(tunnus, salasana);
             this.kayttajat.add(k);
             addToDb("kayttajat.txt", tunnus, salasana);
-            return 1;           
-        } else {
-            Kayttaja k = new Kayttaja(tunnus, salasana);
-            this.kayttajat.add(k);
-            addToDb("kayttajat.txt", tunnus, salasana);
-            return 1;
+            return 1; 
         }
     }
     /**
@@ -78,23 +79,23 @@ public class Biotietokanta {
     public int add(String sekvenssi, String nimi) {
         sekvenssi = sekvenssi.toLowerCase();        
         for (String s: sekvenssi.split("")) {  
-            if (s.equals("a") || s.equals("t") || s.equals("c") || s.equals("g") || s.equals("\n")) {
-            } else {
+            if (!s.equals("a") && !s.equals("t") && !s.equals("c") && !s.equals("g") && !s.equals("\n")) {
                 return 0;
             }
         } if (!nimi.contains(" ")) {
             return -2;
-        } if (!this.lajit.isEmpty()) {            
-            for (Laji laji : this.lajit) {
-                if (laji.getLaji().equals(nimi)) {
-                    return -1;
-                }                
-            }
+        } 
+        if (this.lajit.isEmpty()) {                        
             Laji l = new Laji(sekvenssi, nimi);
             this.lajit.add(l);
             addToDb("sekvenssit.txt", sekvenssi, nimi);
             return 1;           
         } else {
+            for (Laji laji : this.lajit) {
+                if (laji.getLaji().equals(nimi)) {
+                    return -1;
+                }                
+            }
             Laji l = new Laji(sekvenssi, nimi);
             this.lajit.add(l);
             addToDb("sekvenssit.txt", sekvenssi, nimi);
@@ -118,8 +119,9 @@ public class Biotietokanta {
     }
     /** 
      * Luetaan sekvenssit.txt -tiedostosta työmuistiin eli this.lajit-listaan lajien nimet ja DNA-sekvenssit. 
+     * @return true, jos kaikki menee normaalisti, muuten false
      */
-    public void fromDbToSeq() {
+    public boolean fromDbToSeq() {
         try {
             ArrayList<String> species = new ArrayList<>();
             ArrayList<String> seq = new ArrayList<>();
@@ -145,26 +147,30 @@ public class Biotietokanta {
             int i = 0;
             if (seq.isEmpty()) {
                 this.lajit.isEmpty();
+                return true;
             } else {
                 while (i < seq.size()) {
                     Laji l = new Laji(seq.get(i), species.get(i));
                     this.lajit.add(l);
                     i++;
                 }
+                return true;
             }
 
         } catch (IOException e) {
         }
+        return false;
     }
     /**
      * Luetaan kayttajat.txt -tiedostosta työmuistiin eli this.kayttajat-listaan käyttäjätunnukset
      * ja niihin liittyvät salasanat.
+     * @return true, jos kaikki menee normaalisti, tai false
      */
-    public void fromDbToUser() {
+    public boolean fromDbToUser() {
         try {
-            ArrayList<String>haettavat = new ArrayList<>();
-            ArrayList<String>parilliset = new ArrayList<>();
-            ArrayList<String>parittomat = new ArrayList<>();
+            ArrayList<String> haettavat = new ArrayList<>();
+            ArrayList<String> parilliset = new ArrayList<>();
+            ArrayList<String> parittomat = new ArrayList<>();
             FileReader reader = new FileReader("kayttajat.txt");
             BufferedReader bufferedReader = new BufferedReader(reader); 
             String line;
@@ -183,17 +189,20 @@ public class Biotietokanta {
             i = 0;
             if (parilliset.isEmpty()) {
                 this.kayttajat.isEmpty();
+                return true;
             } else {
                 while (i < parilliset.size()) {
                     Kayttaja k = new Kayttaja(parilliset.get(i), parittomat.get(i));
                     this.kayttajat.add(k);
                     i++;
                 }
+                return true;
             }
            
         } catch (IOException e) {
             
         }
+        return false;
     }
     /**
      * Lisätään valittuun tekstitiedostoon joko käyttäjätunnus ja salasana tai DNA-sekvenssi ja laji.
