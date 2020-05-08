@@ -52,6 +52,8 @@ kayttajatunnus:salasana:
 
 #### Sisäänkirjautuminen
 
+![kuva2](/dokumentaatio/kuvat/kirjaudu.jpg)
+
 #### Lajitietojen lisääminen
 
 #### Lajin nimen hakeminen
