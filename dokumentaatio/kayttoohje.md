@@ -24,6 +24,6 @@ Liitetään tekstikenttään "Add a DNA-sequence" -otsikon alle lajin tunnettu g
 Painetaan nappia "Sign up", jolloin päästään luomaan tunnusta. Lisätään käyttäjätunnus kohtaan Username ja salasana kohtaan Password. Jos tunnuksen luominen onnistuu, päästään "Sign up"-napin painamisen jälkeen sisäänkirjautuneeseen näkymään. Jos sovellus kertoo, että käyttäjätunnus on jo olemassa, voidaan siirtyä sisäänkirjautumisnäkymään napista "Sign In!".
 
 ## Sisään kirjautuminen
-![kuva4](/dokumentaatio/kuvat/SingIn.png)
+![kuva4](/dokumentaatio/kuvat/SignIn.png)
 
 Jos käyttäjätunnus on olemassa, sisäänkirjautuminen tapahtuu napista "Sign in". Lisätään käyttäjätunnus kohtaan Username ja oikea salasana kohtaan Password, minkä jälkeen sisään kirjautuminen on mahdollista.
