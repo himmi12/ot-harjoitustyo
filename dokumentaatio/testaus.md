@@ -9,3 +9,11 @@
 ### Testauskattavuus
 
 ![kuva](/dokumentaatio/kuvat/Testaus.png)
+
+## Järjestelmätestaus
+
+## Asennus ja konfigurointi
+
+## Toiminnallisuudet
+
+## Sovellukseen jääneet laatuongelmat
