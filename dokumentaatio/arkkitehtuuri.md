@@ -39,7 +39,7 @@ Tiedon pysyväistallennus tapahtuu Biotietokanta-luokan metodin addToDb avulla. 
 
 Tiedot tallennetaan muodossa:
 
-atgtgggt:Lajin nimi:
+atcgatcg:Lajin nimi:
 * Siis validi sekvenssidata pieninä kirjaimina erotettuna kaksoispisteellä lajin nimestä, minkä jälkeen on uudelleen kaksoispiste
 kayttajatunnus:salasana:
 * Siis käyttäjätunnus erotettuna kaksoispisteellä salasanasta, minkä jälkeen uudelleen kaksoispiste
