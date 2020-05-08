@@ -15,8 +15,7 @@ Käyttöliittymää ei testata.
 ### Testauskattavuus
 
 ![kuva](/dokumentaatio/kuvat/Testaus.png)
-
-Testauskattavuusraportti on tehty vain paketista fi.himmi.logics, koska käyttöliittymän sisältävässä paketissa ei ole testejä. Huomataan, että sekä rivi- että haarautumakattavuus on 93 %. Näin ollen yksikkötestauksessa tulokset ovat suhteellisen kelpaavia.
+Testauskattavuusraportti on tehty vain paketista fi.himmi.logics, koska käyttöliittymän sisältävässä paketissa ei ole testejä. Huomataan, että sekä rivi- että haarautumakattavuus on 93 %. Näin ollen yksikkötestauksessa tulokset ovat suhteellisen kelvollisia.
 
 ## Järjestelmätestaus
 
