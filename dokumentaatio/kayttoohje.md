@@ -2,7 +2,7 @@
 
 ## Konfigurointi
 
-Olettaa, että käynnistyshakemistossa on tiedostot kayttajat.txt ja sekvenssit.txt.
+Olettaa, että käynnistyshakemistossa on tiedostot kayttajat.txt, sekvenssit.txt ja fluorisoiva.png.
 
 ## Ohjelman käynnistäminen
 
@@ -10,11 +10,11 @@ Komennolla: java -jar todoapp.jar
 
 ## Hakutoiminto
 
-Liitetään textikenttään "Enter a FASTA sequence" -otsikon alle tuntemattoman lajin DNA-sekvenssiä. Painetaan search-nappia hakemisen aloittamiseksi. Hakutoiminto löytyy sekä kirjautumatta että kirjautuneena.
+Liitetään textikenttään "Enter a DNA-sequence" -otsikon alle tuntemattoman lajin DNA-sekvenssiä. Painetaan search-nappia hakemisen aloittamiseksi. Hakutoiminto löytyy sekä kirjautumatta että kirjautuneena.
 
 ## Laji- ja DNA-sekvenssitiedon lisääminen
 
-Liitetään tekstikenttään "Add a FASTA sequence" -otsikon alle lajin tunnettu genomi (tässä sovelluksessa ei käyetä kokonaisia genomeja). Lisätään tekstikenttään "Add the scientific name of the species" -otsikon alle kyseisen lajin tieteellinen nimi. Tämän toiminnon tekeminen on mahdollista vain sisäänkirjautuneena.
+Liitetään tekstikenttään "Add a DNA-sequence" -otsikon alle lajin tunnettu genomi (tässä sovelluksessa ei käytetä kokonaisia genomeja). Lisätään tekstikenttään "Add the scientific name of the species" -otsikon alle kyseisen lajin tieteellinen nimi. Tämän toiminnon tekeminen on mahdollista vain sisäänkirjautuneena.
 
 ## Tunnuksen luominen
 
