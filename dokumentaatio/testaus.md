@@ -17,7 +17,7 @@ Käyttöliittymää ei testata.
 ![kuva](/dokumentaatio/kuvat/testausLogics.png)
 Testauskattavuusraportti on tehty vain paketista fi.himmi.logics, koska käyttöliittymän sisältävässä paketissa ei ole testejä. Huomataan, että sekä rivikattavuus on 96% ja haarautumakattavuus on 92 %. Näin ollen yksikkötestauksessa tulokset ovat suhteellisen kelvollisia.
 
-![kuva2](/dokumentaatio/kuvat/testausBio.png)
+![kuva2](/dokumentaatio/kuvat/testausB.png)
 Biotietokanta-luokan metodien testaus tarkemmin.
 
 ## Järjestelmätestaus
