@@ -35,7 +35,7 @@ public class BiotietokantaSovellus extends Application {
         bioDb.fromDbToUser();
         this.pw = "";
         
-
+        
         TextArea sequence = new TextArea();        
         Button signIn = new Button("Sign in");
         Button signUp = new Button("Sign up");
