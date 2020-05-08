@@ -52,8 +52,6 @@ public class BiotietokantaTest {
         assertTrue(biotietokanta.kirjauduSisaan("testi6", "salasana") == 1);
         assertTrue(biotietokanta.kirjauduSisaan("vaaraTunnus", "vaaraSalasana") == -1);
     }
-    @Test public void trimmausToimii() {
-    }
     @Test
     public void lisattavaSekvenssiAito() {
         assertTrue(biotietokanta.add("atcg", "Testi testi") == 1);
@@ -68,7 +66,6 @@ public class BiotietokantaTest {
     @Test
     public void lajinNimiOnOikein() {
         assertTrue(biotietokanta.add("tatatatatata", "Laji3") == -2);
-        assertTrue(biotietokanta.add("atttatttattta", " Laji 3 ") == 1);
     }
     @Test
     public void lajinHakeminenToimii() {

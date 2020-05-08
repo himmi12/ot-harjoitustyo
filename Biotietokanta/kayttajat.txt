@@ -1,6 +1,3 @@
-himmi:123456:
-kissakoira:kokeillaan:
-kokeillaan:testi123 :
 testi3:salasana:
 testi4:salasana:
 testi2:seitseman:
