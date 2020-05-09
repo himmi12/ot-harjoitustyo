@@ -44,7 +44,7 @@ atcgatcg:Lajin nimi:
 kayttajatunnus:salasana:
 * Siis käyttäjätunnus erotettuna kaksoispisteellä salasanasta, minkä jälkeen uudelleen kaksoispiste
 
-### Päätoiminnallisuudet
+### Toiminnallisuudet
 
 #### Käyttäjätunnuksen luominen
 
@@ -62,12 +62,8 @@ kayttajatunnus:salasana:
 
 ![kuva4](/dokumentaatio/kuvat/search.png)
 
-### Muut toiminnallisuudet
-
-
-
 ## Ohjelman rakenteelliset heikkoudet
 
-Tiedon tallennus.
+Ohjelmassa on joitain rakenteellisia heikkouksia, joista on mainittu muun muassa testausdokumentissa. Heikkouksista huomionarvoisin on tiedon tallennus, sillä vaikka ohjelman nimi on Bio**tietokanta**, se ei tallenna tietoa tietokantaan vaan tekstitiedostoihin. Tämän vuoksi yhtään suurempien datamäärien pyöritys ohjelmalla toimisi huonosti. Koska tiedot tallentuvat tekstitiedostoihin, on ohjelma vaarassa kaatua, jos minkäänlainen väärä syöte pääsisi tallentumaan tiedostoon. Muun muassa tekstitiedoston tyhjentäminen manuaalisesti voi johtaa sinne, että tyhjältä näyttävässä tiedostossa on rivinvaihtomerkki, joka johtaa ohjelman kaatumiseen. Koska ohjelmassa ei ole mahdollisuutta poistaa tai muokata tekstitiedostoihin tallennettua tietoa, muokkaukset tuleekin tehdä manuaalisesti. Tämä on suuri puute.
 
-Muuttujat.
+Ohjelman muuttujat on nimetty erittäin epämääräisesti. Koska tajusin vasta liian myöhään, että ohjelmointi olisi pitänyt suorittaa englanniksi, vain osa muuttujista on englanniksi. Jälkeenpäin ajateltuna olisi ollut parempi, jos kaikki olisivat olleet suomeksi. Lisäksi muuttujien nimeäminen kielestä riippumatta olisi kaivannut johdonmukaisuutta.
