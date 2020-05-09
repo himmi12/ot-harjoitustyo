@@ -19,6 +19,8 @@ Sovellus on yksikertaistettu genomiselain, jonka avulla voi etsiä, mistä lajis
 
 [viikko 6](https://github.com/himmi12/ot-harjoitustyo/releases/tag/viikko6)
 
+[viikko 7, Loppupalautus](https://github.com/himmi12/ot-harjoitustyo/releases/tag/loppupalautus)
+
 ## Komentorivikomennot
 
 ### Testaus
