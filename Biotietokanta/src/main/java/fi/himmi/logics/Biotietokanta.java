@@ -200,7 +200,7 @@ public class Biotietokanta {
                 this.kayttajat.isEmpty();
                 return true;
             } else {
-                while (i < parilliset.size()) {
+                while (i < parittomat.size()) {
                     Kayttaja k = new Kayttaja(parilliset.get(i), parittomat.get(i));
                     this.kayttajat.add(k);
                     i++;

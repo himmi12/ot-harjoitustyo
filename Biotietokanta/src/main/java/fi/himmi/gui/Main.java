@@ -5,22 +5,13 @@
  */
 package fi.himmi.gui;
 
-import java.sql.SQLException;
-
 /**
  *
  * @author himmi
  */
 public class Main {
     
-    public static void main(String[] args) throws SQLException {
-        
-//        String tietokannanPolku = "jdbc:h2:./sekvenssit";
-//        if (args.length > 0) {
-//            tietokannanPolku = args[0];
-//        }
-//
-//        LajiDaoClass tietokanta = new LajiDaoClass(tietokannanPolku);
+    public static void main(String[] args) {
 
         BiotietokantaSovellus.main(args);          
     }
