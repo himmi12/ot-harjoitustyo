@@ -67,6 +67,8 @@ Checkstylien korjaus. ALustavan käyttöohjeen kirjoittaminen. Javadocin käytt�
 
 # VIIKKO7
 
+46h (aiemmat) + 27h (tämä viikko) = 73 h (yhteensä)
+
 ### 03.05. 1,5
 Yritin saada hakutoimintoa toimimaan sekä sekvenssitietojen että käyttäjätietojen osalta. Sovellus ei edennyt lainkaan.
 
@@ -78,3 +80,9 @@ Sain tiedon tallennuksen ja haun toimimimaan siten, että sovellus käyttää ty
 
 ### 07.05. 5,5h
 Hioin sovelluksen ulkoasua kuntoon. Tarkistin, että sovellus toimii virheellisilläkin syötteillä. Viimeistelin testausta.
+
+### 08.05. 6h
+Kirjoitin testausdokumentin, tein arkkitehtuurikuvauksen sekä viimeistelin käyttöohjeen.
+
+### 09.05. 5h
+Yritin selvittää, miksi ssh-yhteydellä jar-tiedoston generointi päättyy aina erroviestiin. Lukiessani tg-ryhmästä, että muillekin oli tullut etäyhteydellä viesti Unable to open DISPLAY, jätin asian sikseen. Yritin selvittää myös, miksi javadocin generointi ei onnistu etäyhteydellä, vaikka omalla koneellani onnistuu. Näiden lisäksi eilen viimeistelemäni ohjelman ulkoasu ei suostunut näkymään komentoriviltä ajettaessa, joten jätin sen sikseen. Ohjelma toimii edelleen hienosti Netbeansissa. Lisäsin loppupalautuksen huolimatta siitä, etten saanut kaikkea toimimaan etäyhteydellä tai muutenkaan.
