@@ -52,13 +52,19 @@ kayttajatunnus:salasana:
 
 #### Sisäänkirjautuminen
 
-![kuva2](/dokumentaatio/kuvat/kirjaudu.jpg)
+![kuva2](/dokumentaatio/kuvat/kirjaudu.png)
 
 #### Lajitietojen lisääminen
 
+![kuva3](/dokumentaatio/kuvat/add.png)
+
 #### Lajin nimen hakeminen
 
+![kuva4](/dokumentaatio/kuvat/search.png)
+
 ### Muut toiminnallisuudet
+
+
 
 ## Ohjelman rakenteelliset heikkoudet
 
