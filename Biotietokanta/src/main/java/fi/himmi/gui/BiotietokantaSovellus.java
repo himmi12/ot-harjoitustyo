@@ -41,9 +41,9 @@ public class BiotietokantaSovellus extends Application {
         Button signUp = new Button("Sign up");
         Button srch = new Button("Search");
         Label list = new Label("");
-        list.setTextFill(Color.WHITE);
+        list.setTextFill(Color.GRAY);
         Label intro = new Label("Enter a DNA sequence");
-        intro.setTextFill(Color.WHITE);
+        intro.setTextFill(Color.GRAY);
         Image image = new Image("file:fluorisoiva.png");
         BackgroundImage bimage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         Background bg = new Background(bimage);
@@ -64,13 +64,13 @@ public class BiotietokantaSovellus extends Application {
         password.setMaxWidth(150);
         Label user = new Label("Username");
         Label passw = new Label("Password");
-        user.setTextFill(Color.WHITE);
-        passw.setTextFill(Color.WHITE);
+        user.setTextFill(Color.GRAY);
+        passw.setTextFill(Color.GRAY);
         Button create = new Button("Create an account");
         Label info = new Label("");
-        info.setTextFill(Color.WHITE);        
+        info.setTextFill(Color.GRAY);        
         Label accountExists = new Label("Already have an account?");
-        accountExists.setTextFill(Color.WHITE);
+        accountExists.setTextFill(Color.GRAY);
         Button toSigningIn = new Button("Sign in!");
         
         HBox changeTheView = new HBox();
@@ -90,13 +90,13 @@ public class BiotietokantaSovellus extends Application {
         PasswordField p = new PasswordField();
         p.setMaxWidth(150);
         Label userN = new Label("Username");
-        userN.setTextFill(Color.WHITE);
+        userN.setTextFill(Color.GRAY);
         Label passW = new Label("Password");
-        passW.setTextFill(Color.WHITE);
+        passW.setTextFill(Color.GRAY);
         Button toPrivateView = new Button("Sign in!");
         Button back = new Button("Back");
         Label msg = new Label("");
-        msg.setTextFill(Color.WHITE);
+        msg.setTextFill(Color.GRAY);
         
         VBox signingIn = new VBox();
         
@@ -111,9 +111,9 @@ public class BiotietokantaSovellus extends Application {
         Button logout = new Button("Log out");
         Button search = new Button("Search");
         Label result = new Label("");
-        result.setTextFill(Color.WHITE);
+        result.setTextFill(Color.GRAY);
         Label enter = new Label("Enter a DNA sequence");
-        enter.setTextFill(Color.WHITE);
+        enter.setTextFill(Color.GRAY);
         
         VBox searchArea = new VBox();
         searchArea.getChildren().addAll(enter, seq, search, result);
@@ -123,13 +123,13 @@ public class BiotietokantaSovellus extends Application {
         addName.setMaxWidth(300);
         Button addButton = new Button("Add");
         Label message = new Label("");
-        message.setTextFill(Color.WHITE);
+        message.setTextFill(Color.GRAY);
         
         VBox add = new VBox();
         Label addS = new Label("Add a DNA sequence");
-        addS.setTextFill(Color.WHITE);
+        addS.setTextFill(Color.GRAY);
         Label addSN = new Label("Add the scientific name of the species");
-        addSN.setTextFill(Color.WHITE);
+        addSN.setTextFill(Color.GRAY);
         add.getChildren().addAll(addS, addSeq, addSN, addName, addButton, message);
         
         BorderPane priLayout = new BorderPane();

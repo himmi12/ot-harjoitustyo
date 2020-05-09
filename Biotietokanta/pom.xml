@@ -94,9 +94,9 @@
                                 </transformer>
                             </transformers>
                             
-                            <ignoredClassPatterns>
+<!--                            <ignoredClassPatterns>
                                 <ignoredClassPattern>module-info</ignoredClassPattern>
-                            </ignoredClassPatterns>
+                            </ignoredClassPatterns>-->
                             
                         </configuration>                        
                     </execution>
