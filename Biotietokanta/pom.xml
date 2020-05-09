@@ -93,7 +93,12 @@
                                     <mainClass>fi.himmi.gui.Main</mainClass>
                                 </transformer>
                             </transformers>
-                        </configuration>
+                            
+                            <ignoredClassPatterns>
+                                <ignoredClassPattern>module-info</ignoredClassPattern>
+                            </ignoredClassPatterns>
+                            
+                        </configuration>                        
                     </execution>
                 </executions>
             </plugin> 

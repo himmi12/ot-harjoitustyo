@@ -1,1 +1,11 @@
 
+attt:Laji 1:
+atcg:Laji 2:
+atcg:Testi testi:
+aaaatttt:Laji 4:
+ccaattgg:Laji 5:
+attt:Laji 1:
+atcg:Laji 2:
+atcg:Testi testi:
+aaaatttt:Laji 4:
+ccaattgg:Laji 5:
