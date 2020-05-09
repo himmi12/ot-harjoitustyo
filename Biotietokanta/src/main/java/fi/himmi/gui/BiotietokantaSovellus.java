@@ -44,9 +44,9 @@ public class BiotietokantaSovellus extends Application {
         list.setTextFill(Color.GRAY);
         Label intro = new Label("Enter a DNA sequence");
         intro.setTextFill(Color.GRAY);
-        Image image = new Image("file:fluorisoiva.png");
-        BackgroundImage bimage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
-        Background bg = new Background(bimage);
+//        Image image = new Image("file:fluorisoiva.png");
+//        BackgroundImage bimage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+//        Background bg = new Background(bimage);
         
         VBox pubView = new VBox();        
         pubView.setSpacing(10);
@@ -54,7 +54,7 @@ public class BiotietokantaSovellus extends Application {
         
         HBox pubLayout = new HBox();        
         pubLayout.getChildren().addAll(pubView);
-        pubLayout.setBackground(bg);
+//        pubLayout.setBackground(bg);
         
 
         
@@ -81,7 +81,7 @@ public class BiotietokantaSovellus extends Application {
         signingUp.setSpacing(10);
         signingUp.getChildren().addAll(user, username, passw, password, create, info, changeTheView);
         
-        signingUp.setBackground(bg);
+    //    signingUp.setBackground(bg);
         
 
         
@@ -103,7 +103,7 @@ public class BiotietokantaSovellus extends Application {
         signingIn.setSpacing(10);
         signingIn.getChildren().addAll(userN, u, passW, p, msg, toPrivateView, back);
         
-        signingIn.setBackground(bg);
+    //    signingIn.setBackground(bg);
         
 
         
@@ -137,7 +137,7 @@ public class BiotietokantaSovellus extends Application {
         priLayout.setBottom(logout);
         priLayout.setRight(add);
         
-        priLayout.setBackground(bg);
+    //    priLayout.setBackground(bg);
         
         
         Scene pub = new Scene(pubLayout, 1000, 600);
