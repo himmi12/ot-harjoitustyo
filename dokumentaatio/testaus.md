@@ -2,7 +2,7 @@
 
 Sovellusta on testattu yksikkö- ja integraatiotesteillä, joista on luotu testikattavuusraportti, sekä järjestelmätestillä sovellusta käytettäessä.
 
-## Yksikkö- ja integraatiotestaus
+## Yksikkötestaus
 
 ### Sovelluslogiikka
 
