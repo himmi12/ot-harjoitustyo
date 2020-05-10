@@ -6,7 +6,7 @@ Olettaa, että käynnistyshakemistossa on tiedostot kayttajat.txt, sekvenssit.tx
 
 ## Ohjelman käynnistäminen
 
-Komennolla: java -jar todoapp.jar
+Komennolla: java -jar Biotietokanta.jar
 
 ## Hakutoiminto
 ![kuva1](/dokumentaatio/kuvat/PublicView.png)
